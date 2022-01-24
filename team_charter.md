@@ -29,8 +29,7 @@ needs and style.
 These resources may be helpful as you fill out your team charter. They are optional, but may help you develop your charter:
 
 * [Discussion Guide to the qualities above](https://docs.google.com/document/d/1lgiz6mwZeyWEaJxN_NMI-tI5Qijv2BHh27DPLeSLE40)
-* [On Psychological Safety](https://w.amazon.com/bin/view/PsychologicalSafety)
-* [Setting SMART goals](https://inside.amazon.com/en/Employment/Career/goalsetting/Documents/SMART%20Goal%20Setting%20Tips.pdf)
+* [Setting SMART goals](https://www.mindtools.com/pages/article/smart-goals.htm)
 
 ## Charter
 
