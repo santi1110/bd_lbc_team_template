@@ -2,7 +2,7 @@
 
 Please use the following as a reference while completing your design. It has
 been filled out with the details of the starter project you will be receiving,
-based on the Unit 3 project.
+based on the Unit 4 project.
 
 ## 1. Problem Statement
 
@@ -12,8 +12,7 @@ to our millions of customers. We currently provide expert curated, pre-made
 playlists, but customers have often requested the ability to create and manage
 their own custom playlists.
 
-This design document describes the Amazon Music Playlist Service, a new, native
-AWS Coral service that will provide the custom playlist functionality to meet
+This design document describes the Amazon Music Playlist Service, a new service that will provide the custom playlist functionality to meet
 our customers' needs. It is designed to interact with the Amazon Music client
 (which allows customers to stream music from their Amazon Music subscriptionDao to their
 phone or computer) and will return a list of song metadata associated with the
@@ -149,7 +148,6 @@ String title;
 playlist page sends an update request to UpdatePlaylistActivity.
 UpdatePlaylistActivity saves updates to the playlists
 database.](images/example_design_document/UpdatePlaylistSD.png)
-[source](https://plantuml.corp.amazon.com/plantuml/form/encoded.html#encoded=TP1D2i9034RtEKNetWkua8eN44HSfssKmBGT9vbAR--KwHG5tIRlVVcfrIXOx1sOc6Ey-ewCyUneTg86GAsD0KzEU33mYPLMF0s6rOqRbGyMFJsuGb9yvSuNdeCBUsnD9h4PKf4QKaQ_TXGW3yFTeGJX7Y-nwSKs2cFUypw67WgLXDzJ5f-7haY1dv7JRN_W5BCjaqobYLTJ4Q1EGSkxtW00)
 
 ### 6.5. Add Song To Playlist Endpoint
 
@@ -168,7 +166,6 @@ database.](images/example_design_document/UpdatePlaylistSD.png)
 add song page sends an add song request to the AddSongToPlaylistActivity. The
 AddSongToPlaylistActivity save the updated playlist song list in the playlists
 database.](images/example_design_document/AddSongSD.png)
-[source](https://plantuml.corp.amazon.com/plantuml/form/encoded.html#encoded=TP113e9034NtFKN3tWkuC10lO8A9wy9KqcHWHgPWkBr517N1hid_x_-sULBgTMWzgAXdB9p3CdGDQi2BfybBKW2gDVHuziATGZH0QedKAMOthfBe3nUfuGmfuNDH_kpccatNi4ONjSeeEe4ZfOeIO_me2M3fmyDfpS8ZbaFLYY9PNPhhxg5lOPNDkTimizovBzdpOs0xRf-mk6qRmnEDZ4EqJTbjmfBrdW1oAvXV-G80)
 
 ### 6.6. Get Playlist Songs Endpoint
 
@@ -192,7 +189,6 @@ playlists database returns the playlist item to the GetPlaylistSongsActivity.
 The GetPlaylistSongsActivity returns a List<SongModel> to the Website Playlist
 page. The Website playlist page presents a list of songs to the
 client.](images/example_design_document/GetPlaylistSD.png)
-[source](https://plantuml.corp.amazon.com/plantuml/form/encoded.html#encoded=VL5B2i903Dtd5C6z5n0HnOKR1K7GTTh64XWxjKaLRs_wruNkmhnVNcQjHfNLjm0c5XXtR7WCz0gYXgTOv0f0gSKAjq6uC2YTBgcKL1ZEBfoe64-AadAU8Ia-E-IBxju3iNNUf2OFiHTaP9IGCfOzxA5T7CvNWnKky2m-ZAGs30RKYR_yNNdY8iFSksa3OCNtcjNWfyBTnbrS7Y9bumDCoF_GSL7Vx_OtQwguTtZPu8UOSLXzrkiluhuLQpErtl7QTG9OUyVc8zy0)
 
 ## 7. Tables
 
