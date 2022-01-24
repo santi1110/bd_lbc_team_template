@@ -19,22 +19,20 @@ We want you to see the full set of expectations for transparency’s sake.*
 
 |Deliverable                                       |Due Date |Date Completed |URL                                                    |
 |---                                               |---      |---            |---                                                    |
-|Team deliverables (links to templates)            |         |Reviewed Date  |                                                       |
-|Team name                                         |Sprint 1 Module 1        |n/a            |name:                                                  |
-|[Design Document - problem statement]()           |Sprint 1 Module 2        |n/a            |                                                       |
-|[Team Charter]()                                  |Sprint 1 Friday by 5PM       |n/a            |                                                       |
-|[Design Document]()      |Sprint 1 Module 4        |               |                                                       |
-|[Integration Test Plan - reviewed by peer team]() |Sprint 3 Module 1       |               |                                                       |
-|[Team Reflection]()                               |Wednesday of Sprint 4       |n/a            |                                                       |
-|Individual deliverables (links to templates)      |         |Date Submitted |                                                       |
-|[Accomplishment Tracking (alias 1)]()             |Sprint 4 Wednesday by 5PM     |               |                                                       |
-|[Accomplishment Tracking (alias 2)]()             |Sprint 4 Wednesday by 5PM      |               |                                                       |
-|[Accomplishment Tracking (alias 3)]()             |Sprint 4 Wednesday by 5PM      |               |                                                       |
-|[Accomplishment Tracking (alias 4)]()             |Sprint 4 Wednesday by 5PM      |               |                                                       |
-|Self Reflection (alias 1)                         |Sprint 4 Wednesday by 5PM      |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
-|Self Reflection (alias 2)                         |Sprint 4 Wednesday by 5PM      |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
-|Self Reflection (alias 3)                         |Sprint 4 Wednesday by 5PM      |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
-|Self Reflection (alias 4)                         |Sprint 4 Wednesday by 5PM       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
+|Team name                                          |Sprint 1 Module 1        |n/a            |name:                                                  |
+|[Design Document - problem statement]()            |Sprint 1 Module 2        |n/a            |                                                       |
+|[Team Charter]()                                   |Sprint 1 Modeul 3       |n/a            |                                                       |
+|[Design Document]()      |Sprint 1 Friday by 5pm        |               |                                                       |
+|[Integration Test Plan - reviewed by peer team]()  |Sprint 3 Module 1       |               |                                                       |
+|[Team Reflection]()                                |Sprint 4 Wednesday by 5PM       |n/a            |                                                       |
+|[Accomplishment Tracking (person 1)]()             |Sprint 4 Wednesday by 5PM     |               |                                                       |
+|[Accomplishment Tracking (person 2)]()             |Sprint 4 Wednesday by 5PM      |               |                                                       |
+|[Accomplishment Tracking (person 3)]()             |Sprint 4 Wednesday by 5PM      |               |                                                       |
+|[Accomplishment Tracking (person 4)]()             |Sprint 4 Wednesday by 5PM      |               |                                                       |
+|Self Reflection (person 1)                         |Sprint 4 Wednesday by 5PM      |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
+|Self Reflection (person 2)                         |Sprint 4 Wednesday by 5PM      |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
+|Self Reflection (person 3)                         |Sprint 4 Wednesday by 5PM      |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
+|Self Reflection (person 4)                         |Sprint 4 Wednesday by 5PM       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
 
 ## Technical Learning Objectives
 
