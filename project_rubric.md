@@ -22,7 +22,7 @@ We want you to see the full set of expectations for transparency’s sake.*
 |Team deliverables (links to templates)            |         |Reviewed Date  |                                                       |
 |Team name                                         |Sprint 1 Module 1        |n/a            |name:                                                  |
 |[Design Document - problem statement]()           |Sprint 1 Module 2        |n/a            |                                                       |
-|[Team Charter]()                                  |Sprint 1 Module 3        |n/a            |                                                       |
+|[Team Charter]()                                  |Sprint 1 Friday by 5PM       |n/a            |                                                       |
 |[Design Document]()      |Sprint 1 Module 4        |               |                                                       |
 |[Integration Test Plan - reviewed by peer team]() |Sprint 3 Module 1       |               |                                                       |
 |[Team Reflection]()                               |Wednesday of Sprint 4       |n/a            |                                                       |
