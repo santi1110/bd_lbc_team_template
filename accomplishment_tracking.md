@@ -8,10 +8,7 @@ handy during performance reviews and promotion cycles.
 
 ## Instructions
 
-**Save a copy of this document in your “private” Quip folder, and share it with
-your unit instructor(s).** (We don’t recommend that you save to the directory
-this template is in -- this is likely a document you would share with your
-manager and mentors, but may not share with others.)
+**Save a copy of this document in your “private” folder.**
 
 Using the below template, keep track of what you’ve worked on each week during
 the unit. 1-3 bullets under each section for each week should suffice. This
