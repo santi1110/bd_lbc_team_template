@@ -20,8 +20,6 @@ We want you to see the full set of expectations for transparency’s sake.*
 |Deliverable                                       |Due Date |Date Completed |URL                                                    |
 |---                                               |---      |---            |---                                                    |
 |Team deliverables (links to templates)            |         |Reviewed Date  |                                                       |
-|**SIM backlog **(for instructor reference)        |n/a      |n/a            |                                                       |
-|**Project pipeline **(for instructor reference)   |n/a      |n/a            |                                                       |
 |Team name                                         |1        |n/a            |name:                                                  |
 |[Design Document - problem statement]()           |3        |n/a            |                                                       |
 |[Team Charter]()                                  |4        |n/a            |                                                       |
@@ -30,18 +28,10 @@ We want you to see the full set of expectations for transparency’s sake.*
 |[Integration Test Plan - reviewed by peer team]() |13       |               |                                                       |
 |[Team Reflection]()                               |20       |n/a            |                                                       |
 |Individual deliverables (links to templates)      |         |Date Submitted |                                                       |
-|MVP nomination (alias 1)                          |19       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
-|MVP nomination (alias 2)                          |19       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
-|MVP nomination (alias 3)                          |19       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
-|MVP nomination (alias 4)                          |19       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
 |[Accomplishment Tracking (alias 1)]()             |20       |               |                                                       |
 |[Accomplishment Tracking (alias 2)]()             |20       |               |                                                       |
 |[Accomplishment Tracking (alias 3)]()             |20       |               |                                                       |
 |[Accomplishment Tracking (alias 4)]()             |20       |               |                                                       |
-|Peer Reflection (alias 1)                         |20       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
-|Peer Reflection (alias 2)                         |20       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
-|Peer Reflection (alias 3)                         |20       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
-|Peer Reflection (alias 4)                         |20       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
 |Self Reflection (alias 1)                         |20       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
 |Self Reflection (alias 2)                         |20       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
 |Self Reflection (alias 3)                         |20       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
