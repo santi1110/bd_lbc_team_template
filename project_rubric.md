@@ -20,22 +20,21 @@ We want you to see the full set of expectations for transparency’s sake.*
 |Deliverable                                       |Due Date |Date Completed |URL                                                    |
 |---                                               |---      |---            |---                                                    |
 |Team deliverables (links to templates)            |         |Reviewed Date  |                                                       |
-|Team name                                         |1        |n/a            |name:                                                  |
-|[Design Document - problem statement]()           |3        |n/a            |                                                       |
-|[Team Charter]()                                  |4        |n/a            |                                                       |
-|[Design Document - reviewed by peer team]()       |5        |               |                                                       |
-|[Design Document - reviewed by instructor]()      |6        |               |                                                       |
-|[Integration Test Plan - reviewed by peer team]() |13       |               |                                                       |
-|[Team Reflection]()                               |20       |n/a            |                                                       |
+|Team name                                         |Sprint 1 Module 1        |n/a            |name:                                                  |
+|[Design Document - problem statement]()           |Sprint 1 Module 2        |n/a            |                                                       |
+|[Team Charter]()                                  |Sprint 1 Module 3        |n/a            |                                                       |
+|[Design Document]()      |Sprint 1 Module 4        |               |                                                       |
+|[Integration Test Plan - reviewed by peer team]() |Sprint 3 Module 1       |               |                                                       |
+|[Team Reflection]()                               |Wednesday of Sprint 4       |n/a            |                                                       |
 |Individual deliverables (links to templates)      |         |Date Submitted |                                                       |
-|[Accomplishment Tracking (alias 1)]()             |20       |               |                                                       |
-|[Accomplishment Tracking (alias 2)]()             |20       |               |                                                       |
-|[Accomplishment Tracking (alias 3)]()             |20       |               |                                                       |
-|[Accomplishment Tracking (alias 4)]()             |20       |               |                                                       |
-|Self Reflection (alias 1)                         |20       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
-|Self Reflection (alias 2)                         |20       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
-|Self Reflection (alias 3)                         |20       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
-|Self Reflection (alias 4)                         |20       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
+|[Accomplishment Tracking (alias 1)]()             |Wednesday of Sprint 4       |               |                                                       |
+|[Accomplishment Tracking (alias 2)]()             |Wednesday of Sprint 4       |               |                                                       |
+|[Accomplishment Tracking (alias 3)]()             |Wednesday of Sprint 4       |               |                                                       |
+|[Accomplishment Tracking (alias 4)]()             |Wednesday of Sprint 4       |               |                                                       |
+|Self Reflection (alias 1)                         |Wednesday of Sprint 4       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
+|Self Reflection (alias 2)                         |Wednesday of Sprint 4       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
+|Self Reflection (alias 3)                         |Wednesday of Sprint 4       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
+|Self Reflection (alias 4)                         |Wednesday of Sprint 4       |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
 
 ## Technical Learning Objectives
 
