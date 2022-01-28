@@ -2,8 +2,6 @@
 
 ## Instructions
 
-*Save a copy of this template in the same folder that contains this template.*
-
 *Answer the questions below and fill out the process sections with your team’s
 mechanisms to follow your answers. Remove the italicized examples text as you
 go.*
