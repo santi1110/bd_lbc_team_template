@@ -159,7 +159,7 @@ automated integration tests.
 **Learn a new technology.** For each team member, list something new that that
 team member learned:
 
-|Alias |Something new the team member learned |   
+|Team Member |Something new the team member learned |   
 |---   |---                                   |
 |      |                                      |   
 |      |                                      |     
