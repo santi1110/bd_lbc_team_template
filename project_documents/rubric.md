@@ -182,21 +182,6 @@ your team found on your own that helped you on your project.
 
 **Resource:**
 
-**Participate in a design review to receive feedback on your design.** List one
-change or clarification that your team made after holding a review of your
-design (either from a peer or instructor). (If there are comments/questions
-still in the quip doc, that might save you some time remembering...)
-
-1.
-
-**Participate in a design review to give feedback on another group's design.**
-List one question or piece of feedback that you remember giving the other team
-at the time of their review that was helpful or insightful. (If there are
-comments/questions still in the quip doc, that might save you some time
-remembering...)
-
-1.
-
 **Share what was worked on yesterday, the plan for today, and any blockers as a
 part of a scrum standup.** In one or two sentences, describe what your team
 found to be the most useful outcome from holding daily standups.
