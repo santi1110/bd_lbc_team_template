@@ -1,4 +1,4 @@
-# TEMPLATE [Team name] Reflection
+# [Team name] Reflection
 
 ## Instructions
 
