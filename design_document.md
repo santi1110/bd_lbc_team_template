@@ -1,4 +1,4 @@
-# [team name] Design Doc
+# [team name] Design Document
 
 ## Instructions
 
