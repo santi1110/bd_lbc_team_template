@@ -23,7 +23,6 @@ We want you to see the full set of expectations for transparency’s sake.*
 |[Design Document - problem statement](design_document.md)        |Sprint 1 Module 2         |               |                                  |
 |[Team Charter](team_charter.md)                                  |Sprint 1 Modeul 3         |               |                                  |
 |[Design Document](design_document.md)                            |Sprint 1 Friday by 5pm    |               |                                  |
-|[Integration Test Plan - reviewed by peer team]()                |Sprint 3 Module 1         |               |                                  |
 |[Team Reflection](reflection.md)                                 |Sprint 4 Wednesday by 5PM |               |                                  |
 |[Accomplishment Tracking (person 1)](accomplishment_tracking.md) |Sprint 4 Wednesday by 5PM |               |                                  |
 |[Accomplishment Tracking (person 2)](accomplishment_tracking.md) |Sprint 4 Wednesday by 5PM |               |                                  |
@@ -144,15 +143,6 @@ DynamoDB's GSI.** List one of your use cases that uses `query()` on a GSI.
 **Table name:**
 
 **Use case for `query()` on GDI:**
-
-### Integration Tests (outcomes)
-
-**Create an integration test plan.** Which steps in the project did your team
-use your manual front-end test plan?
-
-**Write integration tests.** Describe one thing your team learned about writing
-automated integration tests.
-
 
 ## Soft(er) Outcomes
 
