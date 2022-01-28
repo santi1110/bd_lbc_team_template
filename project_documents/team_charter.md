@@ -131,7 +131,7 @@ rotating or permanent roles as you go.*
 
 |**Role**               |**Responsibilities** |**Primary person** |**Secondary person** |
 |---                    |---                  |---                |---                  |
-|Liaison to Instructors |                     |                   |                     |
+|Liaison to Instructors | Main contact to instructor to give status updates, incluing team dynamics, project progress, etc |||
 |Rotating Role 1        |                     |                   |                     |
 |Rotating Role 2        |                     |                   |                     |
 |Rotating Role 3        |                     |                   |                     |
