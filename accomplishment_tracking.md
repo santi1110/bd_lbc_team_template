@@ -1,4 +1,4 @@
-# TEMPLATE [alias] - [Team name] Accomplishment Tracking
+# [alias] - [Team name] Accomplishment Tracking
 
 ## Background
 
