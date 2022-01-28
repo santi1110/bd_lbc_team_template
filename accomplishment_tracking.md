@@ -1,4 +1,6 @@
-# [alias] - [Team name] Accomplishment Tracking
+# [Your Name] - [Team name] Accomplishment Tracking
+
+Each team member should have their own version of this document.
 
 ## Background
 
