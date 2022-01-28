@@ -1,4 +1,4 @@
-# TEMPLATE [team name] Design Doc
+# [team name] Design Doc
 
 ## Instructions
 
