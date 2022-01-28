@@ -1,4 +1,4 @@
-# TEMPLATE [team name] Team Charter
+# [team name] Team Charter
 
 ## Instructions
 
