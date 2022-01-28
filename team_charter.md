@@ -35,14 +35,12 @@ These resources may be helpful as you fill out your team charter. They are optio
 
 ### Administrative Information:
 
-|Name            |Alias |Preferred Contact Method (Chime, email, etc.) |
+|Name            |Alias |Preferred Contact Method (Zoom, Slack, email, etc.) |
 |---	         |---   |---                                           |
 |Team Member (a) |      |                                              |
 |Team Member (b) |      |                                              |
 |Team Member (c) |      |                                              |
 |Team Member (d) |      |                                              |
-|Instructor 1    |      |                                              |
-|Instructor 2    |      |                                              |
 
 ### Psychological safety
 
@@ -57,7 +55,7 @@ These resources may be helpful as you fill out your team charter. They are optio
     *E.g., communicate when there is a misunderstanding, don’t move forward
     until the situation is resolved, directly address and resolve negativity,
     give and receive feedback with a positive, strength-building mindset, if
-    necessary, escalate to an ATA staff member*  
+    necessary, escalate to a BloomTech staff member*  
 
 ### Dependability, Structure, Clarity
 
@@ -81,7 +79,7 @@ These resources may be helpful as you fill out your team charter. They are optio
 ### Goals
 
 * **Overall: What is our overall objective for the Learn & Be Curious unit?** 
-    *E.g., “Apply what we’ve learned throughout ATA in a team project to prepare
+    *E.g., “Apply what we’ve learned throughout BloomTech in a team project to prepare
     ourselves for internships and full-time SDE roles.”*
       
 
@@ -107,8 +105,8 @@ These resources may be helpful as you fill out your team charter. They are optio
 
 ## Meaning & Impact
 
-**What is personally important for each team member about joining ATA? About
-becoming an SDE?**
+**What is personally important for each team member about joining BloomTech? About
+becoming an software engineer?**
 
 * *Team member name*: 
 * *Team member name*: 
@@ -137,7 +135,6 @@ rotating or permanent roles as you go.*
 |Rotating Role 1        |                     |                   |                     |
 |Rotating Role 2        |                     |                   |                     |
 |Rotating Role 3        |                     |                   |                     |
-|Rotating Role 4        |                     |                   |                     |
 
 ## Acknowledgement
 
