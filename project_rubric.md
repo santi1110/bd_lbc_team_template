@@ -1,4 +1,4 @@
-# TEMPLATE [Team Name] Project Rubric
+# [Team Name] Project Rubric
 
 ## Background
 
