@@ -23,7 +23,7 @@ We want you to see the full set of expectations for transparency’s sake.*
 |[Design Document - problem statement](design_document.md)        |Sprint 1 Module 2         |               |                                  |
 |[Team Charter](team_charter.md)                                  |Sprint 1 Modeul 3         |               |                                  |
 |[Design Document](design_document.md)                            |Sprint 1 Friday by 5pm    |               |                                  |
-|[Integration Test Plan - reviewed by peer team]()                |Sprint 3 Module 1         |               |                                  |
+|Project Completion (Feature Complete)                            |Sprint 3 Friday by 5pm    |               |                                  |
 |[Team Reflection](reflection.md)                                 |Sprint 4 Wednesday by 5PM |               |                                  |
 |[Accomplishment Tracking (person 1)](accomplishment_tracking.md) |Sprint 4 Wednesday by 5PM |               |                                  |
 |[Accomplishment Tracking (person 2)](accomplishment_tracking.md) |Sprint 4 Wednesday by 5PM |               |                                  |
@@ -145,21 +145,12 @@ DynamoDB's GSI.** List one of your use cases that uses `query()` on a GSI.
 
 **Use case for `query()` on GDI:**
 
-### Integration Tests (outcomes)
-
-**Create an integration test plan.** Which steps in the project did your team
-use your manual front-end test plan?
-
-**Write integration tests.** Describe one thing your team learned about writing
-automated integration tests.
-
-
 ## Soft(er) Outcomes
 
 **Learn a new technology.** For each team member, list something new that that
 team member learned:
 
-|Alias |Something new the team member learned |   
+|Team Member |Something new the team member learned |   
 |---   |---                                   |
 |      |                                      |   
 |      |                                      |     
@@ -181,21 +172,6 @@ your team found on your own that helped you on your project.
 **Topic:**
 
 **Resource:**
-
-**Participate in a design review to receive feedback on your design.** List one
-change or clarification that your team made after holding a review of your
-design (either from a peer or instructor). (If there are comments/questions
-still in the quip doc, that might save you some time remembering...)
-
-1.
-
-**Participate in a design review to give feedback on another group's design.**
-List one question or piece of feedback that you remember giving the other team
-at the time of their review that was helpful or insightful. (If there are
-comments/questions still in the quip doc, that might save you some time
-remembering...)
-
-1.
 
 **Share what was worked on yesterday, the plan for today, and any blockers as a
 part of a scrum standup.** In one or two sentences, describe what your team
