@@ -51,12 +51,12 @@ your design.*
 
 ### 4.1. In Scope
 
-*Which parts of the problem defined in Sections 1 and 2 will you solve with this
+*Which parts of the problem defined in Sections 1 and 3 will you solve with this
 design?*
 
 ### 4.2. Out of Scope
 
-*Based on your problem description in Sections 1 and 2, are there any aspects
+*Based on your problem description in Sections 1 and 3, are there any aspects
 you are not planning to solve? Do potential expansions or related problems occur
 to you that you want to explicitly say you are not worrying about now? Feel free
 to put anything here that you think your team can't accomplish in the unit, but
@@ -65,7 +65,7 @@ would love to do with more time.*
 # 5. Proposed Architecture Overview
 
 *Describe broadly how you are proposing to solve for the requirements you
-described in Section 2.*
+described in Section 3.*
 
 *This may include class diagram(s) showing what components you are planning to
 build.*
