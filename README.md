@@ -27,9 +27,14 @@ All project deadlines can be found in the rubric.
 ### [Design Document](project_documents/design_document.md)
 
 The design document is what you need to complete before you start codeing. This document lays out what you will be building and how you will build it, and the more you put into it, the easier your implementation will be. 
-  - project rubric
-  - example project
-  - presentation outline
-  - accomplishment tracking
-  - reflection
-  - team charter
+
+### [Project Rubric](project_documents/rubric.md)
+
+### [Final Presentation Outline](project_documents/final_presentation_outline.pdf)
+
+### [Accomplishment Tracking](project_documents/accomplishment_tracking_template.md)
+
+### [Team Charter](project_documents/team_charter.md)
+
+### [Reflection](project_documents/reflection.md)
+
