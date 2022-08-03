@@ -1,8 +1,8 @@
 # Learn and Be Curious Project Files
 
-Welcome to your Learn and Be Curious Project Repository! As you already know, Learn and Be Curious is a unique experience from your other sprints here at Bloomtech. The biggest difference is that instead of being given a partially built project with mastery tasks, you will be building a project from scratch and giving a presentation about your work. 
+Welcome to your Learn and Be Curious Project Repository! As you already know, Learn and Be Curious is a unique experience from your other sprints here at Bloomtech. The most significant difference is that instead of being given a partially built project with mastery tasks that you need to complete, you will be creating a project from scratch, putting it onto AWS, and presenting your work.
 
-The project that you will be building has some requirements that you'll want to be aware of, so we strongly recommend that you review the contents of this repository before you do any deep planning.
+Inside this repository, you'll find the requirements for your project. We strongly recommend you review this repository's contents before you do any serious planning. These requirements are high-level by design, so you can make something unique that you would like to share with others. 
 
 ## Goal of this Project
 
