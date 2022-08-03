@@ -10,7 +10,7 @@ The overarching goal of Learn and Be Curious is to use what you have learned so 
   
 ## How to Use this Repository
 
-As we mentioned above, we first recommend becoming familiar with the contents of this repository. If you have any questions about the requirements either while you're reading through this repository or while you're building your project, feel free to reach out to the instructor to get any clarification you need. 
+As we mentioned above, we first recommend becoming familiar with the contents of this repository. In it, you will find requirements and templates to help you get the most out of this experience. If you have any questions about the requirements either while you're reading through this repository or while you're building your project, feel free to reach out to the instructor to get any clarification you need. 
 
 The next thing you'll want to be aware of is the template Java project. This project has no Java code, but it has a fleshed out `build.gradle` file with many common dependencies as a starting point for your project. You are not required to use the Java project, so feel free to genearate your own project if you'd like.
 
