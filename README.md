@@ -3,18 +3,14 @@
 Welcome to your Learn and Be Curious Project Repository! As you already know, Learn and Be Curious is a unique experience from your other sprints here at Bloomtech. The most significant difference is that instead of being given a partially built project with mastery tasks that you need to complete, you will be creating a project from scratch, putting it onto AWS, and presenting your work.
 
 We strongly recommend you review this repository's contents before you do any serious planning. Inside, you will find project requirements, templates, and guides that will help you get off to a great start. The requirements for your project are high-level by design. Your project should be unique and something you would be proud to share with others. 
-
-## The Goal of this Project
-
-The overarching goal of Learn and Be Curious is to use what you have learned so far, learn a new skill on your own, and build an incredible portfolio piece. The process of building your project will encapsulate all of those goals. By the end of this experience, you will have a project and experiences to lean on during your job search.
   
 ## How to Use this Repository
 
-As we mentioned above, we first recommend becoming familiar with the contents of this repository. In it, you will find requirements and templates to help you get the most out of this experience. If you have questions about the requirements of this project, feel free to reach out to the instructor to get any clarification.
+All project files that you use should be inside this repository. If you're working on a team, all team members should have access to the same repository so you can share your files in one place.
 
-We've included in this project a starter project. This project contains a `build.gradle` file with many commonly used dependencies. Feel free to use this starter project or create your own.
+As we mentioned above, we first recommend becoming familiar with the contents of this repository. If you have questions about the requirements of this project, feel free to reach out to the instructor to get any clarification.
 
-Later, you will build a simple website that communicates with your project. We've included a few simple examples of web pages that you can refer to when building your website.
+We've included a template Java project and webpages. Feel free to use these examples as references as you build out your own project.
 
 ## Deadlines
 
