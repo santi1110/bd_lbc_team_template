@@ -14,7 +14,7 @@ As we mentioned above, we first recommend becoming familiar with the contents of
 
 The next thing you'll want to be aware of is the template Java project. This project has no Java code, but it has a fleshed out `build.gradle` file with many common dependencies as a starting point for your project. You are not required to use the Java project, so feel free to genearate your own project if you'd like.
 
-Later on, you'll be asked to build a simple website, ad we've included an example of what that might look like. Use this example as a reference when it's time to build your website.
+Later on, you'll be asked to build a simple website, and we've included an example of what that might look like. Use this example as a reference when it's time to build your website.
 
 What you won't find in this repo is learning material. All that can be found in Canvas.
 
