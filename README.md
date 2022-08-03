@@ -2,7 +2,7 @@
 
 Welcome to your Learn and Be Curious Project Repository! As you already know, Learn and Be Curious is a unique experience from your other sprints here at Bloomtech. The biggest difference is that instead of being given a partially built project with mastery tasks, you will be building a project from scratch and giving a presentation about your work. 
 
-The project that you will be building has some requirements that you'll want to be aware of, so we strongly recommend that you review the contents of this repository first so that you can start planning your project. 
+The project that you will be building has some requirements that you'll want to be aware of, so we strongly recommend that you review the contents of this repository before you do any deep planning.
 
 ## Goal of this Project
 
