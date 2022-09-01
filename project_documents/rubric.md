@@ -29,7 +29,7 @@ We want you to see the full set of expectations for transparency’s sake.*
 |[Accomplishment Tracking (person 2)](accomplishment_tracking.md) |Sprint 3                  |               |                                  |
 |[Accomplishment Tracking (person 3)](accomplishment_tracking.md) |Sprint 3                  |               |                                  |
 |[Accomplishment Tracking (person 4)](accomplishment_tracking.md) |Sprint 3                  |               |                                  |
-|Self Reflection                                                  |Sprint 3 Wednesday by 5PM |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
+|Self Reflection                                                  |Sprint 3                  |               |n/a (will be submitted via Canvas - "Wrap-up" section) |
 
 ## Technical Learning Objectives
 
