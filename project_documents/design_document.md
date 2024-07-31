@@ -1,4 +1,4 @@
-# [team name] Design Document
+# [Santi's Project] Design Document
 
 ## Instructions
 
@@ -13,7 +13,7 @@ italics)*
 this template for more guidance on the types of information to capture, and the
 level of detail to aim for.*
 
-## *Project Title* Design
+## *Santi's Project* Design
 
 ## 1. Problem Statement
 
