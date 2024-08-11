@@ -17,7 +17,8 @@ level of detail to aim for.*
 
 ## 1. Problem Statement
 
-*Explain clearly what problem you are trying to solve.*
+I dont have a particular idea now, but I think that when I will get into the Project
+Im going to figure out what algorithm im going to use to solve a specific problem.
 
 
 ## 2. Top Questions to Resolve in Review
