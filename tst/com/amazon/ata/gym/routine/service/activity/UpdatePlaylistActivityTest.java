@@ -1,12 +1,12 @@
 package com.amazon.ata.gym.routine.service.activity;
 
-import com.amazon.ata.gym.routine.service.dynamodb.PlaylistDao;
-import com.amazon.ata.gym.routine.service.dynamodb.models.Playlist;
+import com.amazon.ata.gym.routine.service.dynamodb.RoutineDao;
+import com.amazon.ata.gym.routine.service.dynamodb.models.Routine;
 import com.amazon.ata.gym.routine.service.exceptions.InvalidAttributeChangeException;
 import com.amazon.ata.gym.routine.service.exceptions.InvalidAttributeValueException;
-import com.amazon.ata.gym.routine.service.exceptions.PlaylistNotFoundException;
-import com.amazon.ata.gym.routine.service.models.requests.UpdatePlaylistRequest;
-import com.amazon.ata.gym.routine.service.models.results.UpdatePlaylistResult;
+import com.amazon.ata.gym.routine.service.exceptions.RoutineNotFoundException;
+import com.amazon.ata.gym.routine.service.models.requests.UpdateRoutineRequest;
+import com.amazon.ata.gym.routine.service.models.results.UpdateRoutineResult;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -16,106 +16,102 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-public class UpdatePlaylistActivityTest {
+public class UpdateRoutineActivityTest {
     @Mock
-    private PlaylistDao playlistDao;
-    //
-    private UpdatePlaylistActivity updatePlaylistActivity;
+    private RoutineDao routineDao;
+
+    private UpdateRoutineActivity updateRoutineActivity;
 
     @BeforeEach
     public void setUp() {
         initMocks(this);
-        updatePlaylistActivity = new UpdatePlaylistActivity(playlistDao);
+        updateRoutineActivity = new UpdateRoutineActivity(routineDao);
     }
 
-
-
     @Test
-    public void handleRequest_goodRequest_updatesPlaylistName() {
+    public void handleRequest_goodRequest_updatesRoutineName() {
         // GIVEN
         String id = "id";
         String expectedCustomerId = "expectedCustomerId";
         String expectedName = "new name";
 
-        UpdatePlaylistRequest request = UpdatePlaylistRequest.builder()
-                                            .withId(id)
-                                            .withCustomerId(expectedCustomerId)
-                                            .withName(expectedName)
-                                            .build();
+        UpdateRoutineRequest request = UpdateRoutineRequest.builder()
+                .withId(id)
+                .withCustomerId(expectedCustomerId)
+                .withName(expectedName)
+                .build();
 
-        Playlist startingPlaylist = new Playlist();
-        startingPlaylist.setCustomerId(expectedCustomerId);
-        startingPlaylist.setName("old name");
-        startingPlaylist.setSongCount(0);
+        Routine startingRoutine = new Routine();
+        startingRoutine.setCustomerId(expectedCustomerId);
+        startingRoutine.setName("old name");
+        startingRoutine.setExerciseCount(0);
 
-        when(playlistDao.getPlaylist(id)).thenReturn(startingPlaylist);
+        when(routineDao.getRoutine(id)).thenReturn(startingRoutine);
         doAnswer(invocation -> {
-            Playlist playlist = invocation.getArgument(0);
-            // Simulate the DAO saving the playlist (update in place)
-            startingPlaylist.setName(playlist.getName());
-            startingPlaylist.setTags(playlist.getTags());
+            Routine routine = invocation.getArgument(0);
+            // Simulate the DAO saving the routine (update in place)
+            startingRoutine.setName(routine.getName());
+            startingRoutine.setTags(routine.getTags());
             return null;
-        }).when(playlistDao).savePlaylist(any(Playlist.class));
+        }).when(routineDao).saveRoutine(any(Routine.class));
 
         // WHEN
-        UpdatePlaylistResult result = updatePlaylistActivity.handleRequest(request, null);
+        UpdateRoutineResult result = updateRoutineActivity.handleRequest(request, null);
 
         // THEN
-        assertEquals(expectedName, result.getPlaylist().getName());
-        assertEquals(expectedCustomerId, result.getPlaylist().getCustomerId());
+        assertEquals(expectedName, result.getRoutine().getName());
+        assertEquals(expectedCustomerId, result.getRoutine().getCustomerId());
 
-        verify(playlistDao, times(1)).getPlaylist(id);
-        verify(playlistDao, times(1)).savePlaylist(startingPlaylist);
-        verifyNoMoreInteractions(playlistDao);
+        verify(routineDao, times(1)).getRoutine(id);
+        verify(routineDao, times(1)).saveRoutine(startingRoutine);
+        verifyNoMoreInteractions(routineDao);
     }
-
-
 
     @Test
     public void handleRequest_invalidName_throwsInvalidAttributeValueException() {
         // GIVEN
-        UpdatePlaylistRequest request = UpdatePlaylistRequest.builder()
-                                            .withId("id")
-                                            .withName("I'm illegal")
-                                            .withCustomerId("customerId")
-                                            .build();
+        UpdateRoutineRequest request = UpdateRoutineRequest.builder()
+                .withId("id")
+                .withName("I'm illegal")
+                .withCustomerId("customerId")
+                .build();
 
         // WHEN + THEN
-        assertThrows(InvalidAttributeValueException.class, () -> updatePlaylistActivity.handleRequest(request, null));
+        assertThrows(InvalidAttributeValueException.class, () -> updateRoutineActivity.handleRequest(request, null));
     }
 
     @Test
-    public void handleRequest_playlistDoesNotExist_throwsPlaylistNotFoundException() {
+    public void handleRequest_routineDoesNotExist_throwsRoutineNotFoundException() {
         // GIVEN
         String id = "id";
-        UpdatePlaylistRequest request = UpdatePlaylistRequest.builder()
-                                            .withId(id)
-                                            .withName("name")
-                                            .withCustomerId("customerId")
-                                            .build();
+        UpdateRoutineRequest request = UpdateRoutineRequest.builder()
+                .withId(id)
+                .withName("name")
+                .withCustomerId("customerId")
+                .build();
 
-        when(playlistDao.getPlaylist(id)).thenThrow(new PlaylistNotFoundException());
+        when(routineDao.getRoutine(id)).thenThrow(new RoutineNotFoundException());
 
         // THEN
-        assertThrows(PlaylistNotFoundException.class, () -> updatePlaylistActivity.handleRequest(request, null));
+        assertThrows(RoutineNotFoundException.class, () -> updateRoutineActivity.handleRequest(request, null));
     }
 
     @Test
     public void handleRequest_customerIdNotMatch_throwsInvalidAttributeChangeException() {
         // GIVEN
         String id = "id";
-        UpdatePlaylistRequest request = UpdatePlaylistRequest.builder()
-                                            .withId(id)
-                                            .withName("name")
-                                            .withCustomerId("customerId")
-                                            .build();
+        UpdateRoutineRequest request = UpdateRoutineRequest.builder()
+                .withId(id)
+                .withName("name")
+                .withCustomerId("customerId")
+                .build();
 
-        Playlist differentCustomerIdPlaylist = new Playlist();
-        differentCustomerIdPlaylist.setCustomerId("different");
+        Routine differentCustomerIdRoutine = new Routine();
+        differentCustomerIdRoutine.setCustomerId("different");
 
-        when(playlistDao.getPlaylist(id)).thenReturn(differentCustomerIdPlaylist);
+        when(routineDao.getRoutine(id)).thenReturn(differentCustomerIdRoutine);
 
         // THEN
-        assertThrows(InvalidAttributeChangeException.class, () -> updatePlaylistActivity.handleRequest(request, null));
+        assertThrows(InvalidAttributeChangeException.class, () -> updateRoutineActivity.handleRequest(request, null));
     }
 }

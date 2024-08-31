@@ -8,56 +8,57 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 @Tag("MT1-Design")
 public class MT1DesignSequenceDiagramIntrospectionTests {
-    private static final String GET_PLAYLIST_SEQUENCE_DIAGRAM_PATH = "mastery-task1-get-routine-SD.puml";
-    private static final String CREATE_PLAYLIST_SEQUENCE_DIAGRAM_PATH =
+    private static final String GET_ROUTINE_SEQUENCE_DIAGRAM_PATH = "mastery-task1-get-routine-SD.puml";
+    private static final String CREATE_ROUTINE_SEQUENCE_DIAGRAM_PATH =
             "mastery-task1-create-routine-SD.puml";
 
     @ParameterizedTest
-    @ValueSource(strings = {"GetPlaylistActivity", "PlaylistDao"})
-    void mt1Design_GetPlaylistSequenceDiagram_includesExpectedTypes(String type) {
-        String content = AtaTestHelper.getFileContentFromResources(GET_PLAYLIST_SEQUENCE_DIAGRAM_PATH);
+    @ValueSource(strings = {"GetRoutineActivity", "RoutineDao"})
+    void mt1Design_GetRoutineSequenceDiagram_includesExpectedTypes(String type) {
+        String content = AtaTestHelper.getFileContentFromResources(GET_ROUTINE_SEQUENCE_DIAGRAM_PATH);
 
         PlantUmlSequenceDiagramAssertions.assertSequenceDiagramContainsEntity(content, type);
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"PlaylistNotFoundException", "Playlist"})
-    void mt1Design_GetPlaylistSequenceDiagram_includesExpectedReturnTypes(String type) {
-        String content = AtaTestHelper.getFileContentFromResources(GET_PLAYLIST_SEQUENCE_DIAGRAM_PATH);
+    @ValueSource(strings = {"RoutineNotFoundException", "Routine"})
+    void mt1Design_GetRoutineSequenceDiagram_includesExpectedReturnTypes(String type) {
+        String content = AtaTestHelper.getFileContentFromResources(GET_ROUTINE_SEQUENCE_DIAGRAM_PATH);
 
         PlantUmlSequenceDiagramAssertions.assertSequenceDiagramContainsReturnType(content, type);
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"getPlaylist"})
-    void mt1Design_GetPlaylistSequenceDiagram_includesExpectedMethodCalls(String method) {
-        String content = AtaTestHelper.getFileContentFromResources(GET_PLAYLIST_SEQUENCE_DIAGRAM_PATH);
+    @ValueSource(strings = {"getRoutine"})
+    void mt1Design_GetRoutineSequenceDiagram_includesExpectedMethodCalls(String method) {
+        String content = AtaTestHelper.getFileContentFromResources(GET_ROUTINE_SEQUENCE_DIAGRAM_PATH);
 
         PlantUmlSequenceDiagramAssertions.assertSequenceDiagramContainsMethod(content, method);
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"CreatePlaylistActivity", "MusicPlaylistServiceUtils", "PlaylistDao"})
-    void mt1Design_CreatePlaylistSequenceDiagram_includesExpectedTypes(String type) {
-        String content = AtaTestHelper.getFileContentFromResources(CREATE_PLAYLIST_SEQUENCE_DIAGRAM_PATH);
+    @ValueSource(strings = {"CreateRoutineActivity", "GymRoutineServiceUtils", "RoutineDao"})
+    void mt1Design_CreateRoutineSequenceDiagram_includesExpectedTypes(String type) {
+        String content = AtaTestHelper.getFileContentFromResources(CREATE_ROUTINE_SEQUENCE_DIAGRAM_PATH);
 
         PlantUmlSequenceDiagramAssertions.assertSequenceDiagramContainsEntity(content, type);
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"InvalidAttributeValueException", "String"})
-    void mt1Design_CreatePlaylistSequenceDiagram_includesExpectedReturnTypes(String type) {
-        String content = AtaTestHelper.getFileContentFromResources(CREATE_PLAYLIST_SEQUENCE_DIAGRAM_PATH);
+    void mt1Design_CreateRoutineSequenceDiagram_includesExpectedReturnTypes(String type) {
+        String content = AtaTestHelper.getFileContentFromResources(CREATE_ROUTINE_SEQUENCE_DIAGRAM_PATH);
 
         PlantUmlSequenceDiagramAssertions.assertSequenceDiagramContainsReturnType(content, type);
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"generatePlaylistId", "savePlaylist"})
-    void mt1Design_CreatePlaylistSequenceDiagram_includesExpectedMethodCalls(String method) {
-        String content = AtaTestHelper.getFileContentFromResources(CREATE_PLAYLIST_SEQUENCE_DIAGRAM_PATH);
+    @ValueSource(strings = {"generateRoutineId", "saveRoutine"})
+    void mt1Design_CreateRoutineSequenceDiagram_includesExpectedMethodCalls(String method) {
+        String content = AtaTestHelper.getFileContentFromResources(CREATE_ROUTINE_SEQUENCE_DIAGRAM_PATH);
 
         PlantUmlSequenceDiagramAssertions.assertSequenceDiagramContainsMethod(
                 content.toLowerCase(), method.toLowerCase());
     }
 }
+

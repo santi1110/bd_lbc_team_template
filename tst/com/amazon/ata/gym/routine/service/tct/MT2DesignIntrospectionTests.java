@@ -28,8 +28,8 @@ public class MT2DesignIntrospectionTests {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"InvalidAttributeChangeException", "AlbumTrackNotFoundException",
-            "InvalidAttributeValueException", "PlaylistNotFoundException"})
+    @ValueSource(strings = {"InvalidAttributeChangeException", "ExerciseTrackNotFoundException",
+            "InvalidAttributeValueException", "RoutineNotFoundException"})
     void mt2Design_getClassDiagram_containsExceptionClasses(String packagingClass) {
         PlantUmlClassDiagramAssertions.assertClassDiagramContainsClass(content, packagingClass);
     }
@@ -62,3 +62,4 @@ public class MT2DesignIntrospectionTests {
                         invalidChangeException, invalidValueException));
     }
 }
+

@@ -1,16 +1,16 @@
 package com.amazon.ata.gym.routine.service.activity;
 
-import com.amazon.ata.gym.routine.service.dynamodb.AlbumTrackDao;
-import com.amazon.ata.gym.routine.service.dynamodb.PlaylistDao;
-import com.amazon.ata.gym.routine.service.dynamodb.models.AlbumTrack;
-import com.amazon.ata.gym.routine.service.dynamodb.models.Playlist;
-import com.amazon.ata.gym.routine.service.exceptions.AlbumTrackNotFoundException;
-import com.amazon.ata.gym.routine.service.exceptions.PlaylistNotFoundException;
-import com.amazon.ata.gym.routine.service.models.SongModel;
-import com.amazon.ata.gym.routine.service.models.requests.AddSongToPlaylistRequest;
-import com.amazon.ata.gym.routine.service.models.results.AddSongToPlaylistResult;
-import com.amazon.ata.gym.routine.service.helpers.AlbumTrackTestHelper;
-import com.amazon.ata.gym.routine.service.helpers.PlaylistTestHelper;
+import com.amazon.ata.gym.routine.service.dynamodb.ExerciseDao;
+import com.amazon.ata.gym.routine.service.dynamodb.RoutineDao;
+import com.amazon.ata.gym.routine.service.dynamodb.models.Exercise;
+import com.amazon.ata.gym.routine.service.dynamodb.models.Routine;
+import com.amazon.ata.gym.routine.service.exceptions.ExerciseNotFoundException;
+import com.amazon.ata.gym.routine.service.exceptions.RoutineNotFoundException;
+import com.amazon.ata.gym.routine.service.models.ExerciseModel;
+import com.amazon.ata.gym.routine.service.models.requests.AddExerciseToRoutineRequest;
+import com.amazon.ata.gym.routine.service.models.results.AddExerciseToRoutineResult;
+import com.amazon.ata.gym.routine.service.helpers.ExerciseTestHelper;
+import com.amazon.ata.gym.routine.service.helpers.RoutineTestHelper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -21,89 +21,90 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-public class AddSongToPlaylistActivityTest {
+public class AddExerciseToRoutineActivityTest {
     @Mock
-    private PlaylistDao playlistDao;
+    private RoutineDao routineDao;
 
     @Mock
-    private AlbumTrackDao albumTrackDao;
+    private ExerciseDao exerciseDao;
 
-    private AddSongToPlaylistActivity addSongToPlaylistActivity;
+    private AddExerciseToRoutineActivity addExerciseToRoutineActivity;
 
     @BeforeEach
     public void setup() {
         initMocks(this);
-        addSongToPlaylistActivity = new AddSongToPlaylistActivity(playlistDao, albumTrackDao);
+        addExerciseToRoutineActivity = new AddExerciseToRoutineActivity(routineDao, exerciseDao);
     }
 
     @Test
-    void handleRequest_validRequest_addsSongToEndOfPlaylist() {
+    void handleRequest_validRequest_addsExerciseToEndOfRoutine() {
         // GIVEN
-        // a non-empty playlist
-        Playlist originalPlaylist = PlaylistTestHelper.generatePlaylist();
-        String playlistId = originalPlaylist.getId();
+        // a non-empty routine
+        Routine originalRoutine = RoutineTestHelper.generateRoutine();
+        String routineId = originalRoutine.getId();
 
-        // the new song to add to the playlist
-        AlbumTrack albumTrackToAdd = AlbumTrackTestHelper.generateAlbumTrack(2);
-        String addedAsin = albumTrackToAdd.getAsin();
-        int addedTracknumber = albumTrackToAdd.getTrackNumber();
+        // the new exercise to add to the routine
+        Exercise exerciseToAdd = ExerciseTestHelper.generateExercise(2);
+        String addedExerciseId = exerciseToAdd.getExerciseId();
+        int addedTrackNumber = exerciseToAdd.getTrackNumber();
 
-        when(playlistDao.getPlaylist(playlistId)).thenReturn(originalPlaylist);
-      /*  when(playlistDao.savePlaylist(originalPlaylist)).thenReturn(originalPlaylist);*/
-        when(albumTrackDao.getAlbumTrack(addedAsin, addedTracknumber)).thenReturn(albumTrackToAdd);
+        when(routineDao.getRoutine(routineId)).thenReturn(originalRoutine);
+        when(exerciseDao.getExercise(addedExerciseId, addedTrackNumber)).thenReturn(exerciseToAdd);
 
-        AddSongToPlaylistRequest request = AddSongToPlaylistRequest.builder()
-            .withId(playlistId)
-            .withAsin(addedAsin)
-            .withTrackNumber(addedTracknumber)
-            .build();
+        AddExerciseToRoutineRequest request = AddExerciseToRoutineRequest.builder()
+                .withId(routineId)
+                .withExerciseId(addedExerciseId)
+                .withTrackNumber(addedTrackNumber)
+                .build();
 
         // WHEN
-        AddSongToPlaylistResult result = addSongToPlaylistActivity.handleRequest(request, null);
+        AddExerciseToRoutineResult result = addExerciseToRoutineActivity.handleRequest(request, null);
 
         // THEN
-        verify(playlistDao).savePlaylist(originalPlaylist);
+        verify(routineDao).saveRoutine(originalRoutine);
 
-        assertEquals(2, result.getSongList().size());
-        SongModel secondSong = result.getSongList().get(1);
-        AlbumTrackTestHelper.assertAlbumTrackEqualsSongModel(albumTrackToAdd, secondSong);
+        assertEquals(2, result.getExerciseList().size());
+        ExerciseModel secondExercise = result.getExerciseList().get(1);
+        ExerciseTestHelper.assertExerciseEqualsExerciseModel(exerciseToAdd, secondExercise);
     }
 
     @Test
-    public void handleRequest_noMatchingPlaylistId_throwsPlaylistNotFoundException() {
+    public void handleRequest_noMatchingRoutineId_throwsRoutineNotFoundException() {
         // GIVEN
-        String playlistId = "missing id";
-        AddSongToPlaylistRequest request = AddSongToPlaylistRequest.builder()
-                                               .withId(playlistId)
-                                               .withAsin("asin")
-                                               .withTrackNumber(1)
-                                               .build();
-        when(playlistDao.getPlaylist(playlistId)).thenThrow(new PlaylistNotFoundException());
+        String routineId = "missing id";
+        AddExerciseToRoutineRequest request = AddExerciseToRoutineRequest.builder()
+                .withId(routineId)
+                .withExerciseId("exerciseId")
+                .withTrackNumber(1)
+                .build();
+        when(routineDao.getRoutine(routineId)).thenThrow(new RoutineNotFoundException());
 
         // WHEN + THEN
-        assertThrows(PlaylistNotFoundException.class, () -> addSongToPlaylistActivity.handleRequest(request, null));
+        assertThrows(RoutineNotFoundException.class, () -> addExerciseToRoutineActivity.handleRequest(request, null));
     }
 
     @Test
-    public void handleRequest_noMatchingAlbumTrack_throwsAlbumTrackNotFoundException() {
+    public void handleRequest_noMatchingExercise_throwsExerciseNotFoundException() {
         // GIVEN
-        Playlist playlist = PlaylistTestHelper.generatePlaylist();
-        String playlistId = playlist.getId();
-        String asin = "nonexistent asin";
+        Routine routine = RoutineTestHelper.generateRoutine();
+        String routineId = routine.getId();
+        String exerciseId = "nonexistent exerciseId";
         int trackNumber = -1;
-        AddSongToPlaylistRequest request = AddSongToPlaylistRequest.builder()
-                                               .withId(playlistId)
-                                               .withAsin(asin)
-                                               .withTrackNumber(trackNumber)
-                                               .build();
+        AddExerciseToRoutineRequest request = AddExerciseToRoutineRequest.builder()
+                .withId(routineId)
+                .withExerciseId(exerciseId)
+                .withTrackNumber(trackNumber)
+                .build();
 
         // WHEN
-        when(playlistDao.getPlaylist(playlistId)).thenReturn(playlist);
-        when(albumTrackDao.getAlbumTrack(asin, trackNumber)).thenThrow(new AlbumTrackNotFoundException());
+        when(routineDao.getRoutine(routineId)).thenReturn(routine);
+        when(exerciseDao.getExercise(exerciseId, trackNumber)).thenThrow(new ExerciseNotFoundException());
 
         // THEN
-        assertThrows(AlbumTrackNotFoundException.class, () -> addSongToPlaylistActivity.handleRequest(request, null));
+        assertThrows(ExerciseNotFoundException.class, () -> addExerciseToRoutineActivity.handleRequest(request, null));
     }
+}
+
 
     /*@Test
     void handleRequest_validRequestWithQueueNextFalse_addsSongToEndOfPlaylist() {

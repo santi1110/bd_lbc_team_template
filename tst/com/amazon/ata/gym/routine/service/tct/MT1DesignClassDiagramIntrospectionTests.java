@@ -35,10 +35,10 @@ public class MT1DesignClassDiagramIntrospectionTests {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"AddSongToPlaylistActivity", "CreatePlaylistActivity", "GetPlaylistActivity",
-            "GetPlaylistSongsActivity", "UpdatePlaylistActivity", "AlbumTrack", "Playlist", "AlbumTrackDao",
-            "PlaylistDao", "AlbumTrackNotFoundException", "InvalidAttributeValueException",
-            "PlaylistNotFoundException"})
+    @ValueSource(strings = {"AddExerciseToRoutineActivity", "CreateRoutineActivity", "GetRoutineActivity",
+            "GetRoutineExercisesActivity", "UpdateRoutineActivity", "ExerciseTrack", "Routine", "ExerciseTrackDao",
+            "RoutineDao", "ExerciseTrackNotFoundException", "InvalidAttributeValueException",
+            "RoutineNotFoundException"})
     void mt1Design_getClassDiagram_containsClasses(String packagingClass) {
         PlantUmlClassDiagramAssertions.assertClassDiagramContainsClass(content, packagingClass);
     }
@@ -51,54 +51,54 @@ public class MT1DesignClassDiagramIntrospectionTests {
 
     private static Stream<Arguments> containsRelationshipProvider() {
         return Stream.of(
-                Arguments.of("Playlist", "AlbumTrack"),
-                Arguments.of("AddSongToPlaylistActivity", "AlbumTrackDao"),
-                Arguments.of("CreatePlaylistActivity", "PlaylistDao"),
-                Arguments.of("AddSongToPlaylistActivity", "PlaylistDao"),
-                Arguments.of("GetPlaylistActivity", "PlaylistDao"),
-                Arguments.of("GetPlaylistSongsActivity", "PlaylistDao"),
-                Arguments.of("UpdatePlaylistActivity", "PlaylistDao")
+                Arguments.of("Routine", "ExerciseTrack"),
+                Arguments.of("AddExerciseToRoutineActivity", "ExerciseTrackDao"),
+                Arguments.of("CreateRoutineActivity", "RoutineDao"),
+                Arguments.of("AddExerciseToRoutineActivity", "RoutineDao"),
+                Arguments.of("GetRoutineActivity", "RoutineDao"),
+                Arguments.of("GetRoutineExercisesActivity", "RoutineDao"),
+                Arguments.of("UpdateRoutineActivity", "RoutineDao")
         );
     }
 
     @Test
-    void mt1Design_getClassDiagram_containsAlbumTrackFields() {
+    void mt1Design_getClassDiagram_containsExerciseTrackFields() {
         assertClassDiagramTypeContainsMember(
-            content, "AlbumTrack", "@DynamoDBHashKey\\s*asin\\s*:\\s*String", "asin");
+                content, "ExerciseTrack", "@DynamoDBHashKey\\s*asin\\s*:\\s*String", "asin");
         assertClassDiagramTypeContainsMember(
-            content, "AlbumTrack", "@DynamoDBRangeKey\\s*trackNumber\\s*:\\s*Integer", "trackNumber");
+                content, "ExerciseTrack", "@DynamoDBRangeKey\\s*trackNumber\\s*:\\s*Integer", "trackNumber");
         assertClassDiagramTypeContainsMember(
-            content, "AlbumTrack", "albumName\\s*:\\s*String", "albumName");
+                content, "ExerciseTrack", "albumName\\s*:\\s*String", "albumName");
         assertClassDiagramTypeContainsMember(
-            content, "AlbumTrack", "songTitle\\s*:\\s*String", "songTitle");
+                content, "ExerciseTrack", "songTitle\\s*:\\s*String", "songTitle");
     }
 
     @Test
-    void mt1Design_getClassDiagram_containsPlaylistFields() {
+    void mt1Design_getClassDiagram_containsRoutineFields() {
         assertClassDiagramTypeContainsMember(
-            content, "Playlist", "@DynamoDBHashKey\\s*id\\s*:\\s*String", "id");
+                content, "Routine", "@DynamoDBHashKey\\s*id\\s*:\\s*String", "id");
         assertClassDiagramTypeContainsMember(
-            content, "Playlist", "name\\s*:\\s*String", "name");
+                content, "Routine", "name\\s*:\\s*String", "name");
         assertClassDiagramTypeContainsMember(
-            content, "Playlist", "customerId\\s*:\\s*String", "customerId");
+                content, "Routine", "customerId\\s*:\\s*String", "customerId");
         assertClassDiagramTypeContainsMember(
-            content, "Playlist", "songCount\\s*:\\s*Integer", "songCount");
+                content, "Routine", "exerciseCount\\s*:\\s*Integer", "exerciseCount");
         assertClassDiagramTypeContainsMember(
-            content, "Playlist", "tags\\s*:\\s*Set<String>", "tags");
+                content, "Routine", "tags\\s*:\\s*Set<String>", "tags");
         assertClassDiagramTypeContainsMember(
-            content, "Playlist", "songList\\s*:\\s*List<AlbumTrack>", "songList");
+                content, "Routine", "exerciseList\\s*:\\s*List<ExerciseTrack>", "exerciseList");
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"AlbumTrackDao", "PlaylistDao"})
+    @ValueSource(strings = {"ExerciseTrackDao", "RoutineDao"})
     void mt1Design_getClassDiagram_daosContainDynamoDBMapper(String type) {
         System.out.println("Class Diagram Content:\n" + content);
         assertClassDiagramTypeContainsMember(
-            content, type, "dynamoDbMapper\\s*:\\sDynamoDBMapper", "dynamoDbMapper");
+                content, type, "dynamoDbMapper\\s*:\\sDynamoDBMapper", "dynamoDbMapper");
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"AddSongToPlaylist", "CreatePlaylist", "GetPlaylist", "GetPlaylistSongs", "UpdatePlaylist"})
+    @ValueSource(strings = {"AddExerciseToRoutine", "CreateRoutine", "GetRoutine", "GetRoutineExercises", "UpdateRoutine"})
     void mt1Design_getClassDiagram_activitiesContainMethods(String name) {
         String type = name + "Activity";
         String returnType = name + "Result";
@@ -107,8 +107,9 @@ public class MT1DesignClassDiagramIntrospectionTests {
     }
 
     @Test
-    void mt1Design_getClassDiagram_playlistDaoContainsMethod() {
-        assertClassDiagramTypeContainsMethod(content, "PlaylistDao", "getPlaylist", "Playlist",
+    void mt1Design_getClassDiagram_routineDaoContainsMethod() {
+        assertClassDiagramTypeContainsMethod(content, "RoutineDao", "getRoutine", "Routine",
                 Arrays.asList("String"));
     }
 }
+

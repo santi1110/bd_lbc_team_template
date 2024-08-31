@@ -1,12 +1,12 @@
 package com.amazon.ata.gym.routine.service.activity;
 
-import com.amazon.ata.gym.routine.service.dynamodb.PlaylistDao;
-import com.amazon.ata.gym.routine.service.dynamodb.models.Playlist;
-import com.amazon.ata.gym.routine.service.exceptions.PlaylistNotFoundException;
-import com.amazon.ata.gym.routine.service.models.requests.GetPlaylistSongsRequest;
-import com.amazon.ata.gym.routine.service.models.results.GetPlaylistSongsResult;
-import com.amazon.ata.gym.routine.service.helpers.AlbumTrackTestHelper;
-import com.amazon.ata.gym.routine.service.helpers.PlaylistTestHelper;
+import com.amazon.ata.gym.routine.service.dynamodb.RoutineDao;
+import com.amazon.ata.gym.routine.service.dynamodb.models.Routine;
+import com.amazon.ata.gym.routine.service.exceptions.RoutineNotFoundException;
+import com.amazon.ata.gym.routine.service.models.requests.GetRoutineExercisesRequest;
+import com.amazon.ata.gym.routine.service.models.results.GetRoutineExercisesResult;
+import com.amazon.ata.gym.routine.service.helpers.ExerciseTestHelper;
+import com.amazon.ata.gym.routine.service.helpers.RoutineTestHelper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -15,52 +15,69 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-public class GetPlaylistSongsActivityTest {
+public class GetRoutineExercisesActivityTest {
     @Mock
-    private PlaylistDao playlistDao;
+    private RoutineDao routineDao;
 
-    private GetPlaylistSongsActivity getPlaylistSongsActivity;
+    private GetRoutineExercisesActivity getRoutineExercisesActivity;
 
     @BeforeEach
     public void setup() {
         initMocks(this);
-        getPlaylistSongsActivity = new GetPlaylistSongsActivity(playlistDao);
+        getRoutineExercisesActivity = new GetRoutineExercisesActivity(routineDao);
     }
 
     @Test
-    void handleRequest_playlistExistsWithSongs_returnsSongsInPlaylist() {
+    void handleRequest_routineExistsWithExercises_returnsExercisesInRoutine() {
         // GIVEN
-        Playlist playlist = PlaylistTestHelper.generatePlaylistWithNAlbumTracks(3);
-        String playlistId = playlist.getId();
-        GetPlaylistSongsRequest request = GetPlaylistSongsRequest.builder()
-                                              .withId(playlistId)
-                                              .build();
-        when(playlistDao.getPlaylist(playlistId)).thenReturn(playlist);
+        Routine routine = RoutineTestHelper.generateRoutineWithNExercises(3);
+        String routineId = routine.getId();
+        GetRoutineExercisesRequest request = GetRoutineExercisesRequest.builder()
+                .withId(routineId)
+                .build();
+        when(routineDao.getRoutine(routineId)).thenReturn(routine);
 
         // WHEN
-        GetPlaylistSongsResult result = getPlaylistSongsActivity.handleRequest(request, null);
+        GetRoutineExercisesResult result = getRoutineExercisesActivity.handleRequest(request, null);
 
         // THEN
-        AlbumTrackTestHelper.assertAlbumTracksEqualSongModels(playlist.getSongList(), result.getSongList());
+        ExerciseTestHelper.assertExercisesEqualExerciseModels(routine.getExerciseList(), result.getExerciseList());
     }
 
     @Test
-    void handleRequest_playlistExistsWithoutSongs_returnsEmptyList() {
+    void handleRequest_routineExistsWithoutExercises_returnsEmptyList() {
         // GIVEN
-        Playlist emptyPlaylist = PlaylistTestHelper.generatePlaylistWithNAlbumTracks(0);
-        String playlistId = emptyPlaylist.getId();
-        GetPlaylistSongsRequest request = GetPlaylistSongsRequest.builder()
-                                              .withId(playlistId)
-                                              .build();
-        when(playlistDao.getPlaylist(playlistId)).thenReturn(emptyPlaylist);
+        Routine emptyRoutine = RoutineTestHelper.generateRoutineWithNExercises(0);
+        String routineId = emptyRoutine.getId();
+        GetRoutineExercisesRequest request = GetRoutineExercisesRequest.builder()
+                .withId(routineId)
+                .build();
+        when(routineDao.getRoutine(routineId)).thenReturn(emptyRoutine);
 
         // WHEN
-        GetPlaylistSongsResult result = getPlaylistSongsActivity.handleRequest(request, null);
+        GetRoutineExercisesResult result = getRoutineExercisesActivity.handleRequest(request, null);
 
         // THEN
-        assertTrue(result.getSongList().isEmpty(),
-                   "Expected song list to be empty but was " + result.getSongList());
+        assertTrue(result.getExerciseList().isEmpty(),
+                "Expected exercise list to be empty but was " + result.getExerciseList());
     }
+
+    @Test
+    public void handleRequest_noMatchingRoutineId_throwsRoutineNotFoundException() {
+        // GIVEN
+        String id = "missingID";
+        GetRoutineExercisesRequest request = GetRoutineExercisesRequest.builder()
+                .withId(id)
+                .build();
+
+        // WHEN
+        when(routineDao.getRoutine(id)).thenThrow(new RoutineNotFoundException());
+
+        // WHEN + THEN
+        assertThrows(RoutineNotFoundException.class, () -> getRoutineExercisesActivity.handleRequest(request, null));
+    }
+}
+
 
 /*    @Test
     void handleRequest_withDefaultSongOrder_returnsDefaultOrderedPlaylistSongs() {
@@ -134,7 +151,7 @@ public class GetPlaylistSongsActivityTest {
                           result.getSongList()));
     }*/
 
-    @Test
+/*    @Test
     public void handleRequest_noMatchingPlaylistId_throwsPlaylistNotFoundException() {
         // GIVEN
         String id = "missingID";
@@ -147,7 +164,7 @@ public class GetPlaylistSongsActivityTest {
 
         // WHEN + THEN
         assertThrows(PlaylistNotFoundException.class, () -> getPlaylistSongsActivity.handleRequest(request, null));
-    }
+    }*/
 
 //    @Test
 //    public void handleRequest_withInvalidSongOrder_throwsException() {
