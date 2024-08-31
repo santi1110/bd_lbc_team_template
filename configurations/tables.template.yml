@@ -1,28 +1,29 @@
 Resources:
-  PlaylistsTable:
+  RoutinesTable:
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions:
-        - AttributeName: "id"
+        - AttributeName: "routineId"
           AttributeType: "S"
       KeySchema:
-        - AttributeName: "id"
+        - AttributeName: "routineId"
           KeyType: "HASH"
       BillingMode: "PAY_PER_REQUEST"
-      TableName: "playlists"
+      TableName: "routines"
 
-  AlbumTracksTable:
+  ExercisesTable:
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions:
-        - AttributeName: "asin"
+        - AttributeName: "exerciseId"
           AttributeType: "S"
-        - AttributeName: "track_number"
+        - AttributeName: "exerciseOrder"
           AttributeType: "N"
       KeySchema:
-        - AttributeName: "asin"
+        - AttributeName: "exerciseId"
           KeyType: "HASH"
-        - AttributeName: "track_number"
+        - AttributeName: "exerciseOrder"
           KeyType: "RANGE"
       BillingMode: "PAY_PER_REQUEST"
-      TableName: "album_tracks"
+      TableName: "exercises"
+

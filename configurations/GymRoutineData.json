@@ -1,0 +1,95 @@
+{
+    "gym_routine": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "equipmentId": {
+                        "S": "B019HKJTCI"
+                    },
+                    "exerciseNumber": {
+                        "N": "6"
+                    },
+                    "muscleGroupName": {
+                        "S": "Quadriceps"
+                    },
+                    "exerciseName": {
+                        "S": "Squats"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "equipmentId": {
+                        "S": "B00000000"
+                    },
+                    "exerciseNumber": {
+                        "N": "1"
+                    },
+                    "muscleGroupName": {
+                        "S": "Hamstrings"
+                    },
+                    "exerciseName": {
+                        "S": "Deadlift"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "equipmentId": {
+                        "S": "AB00000000"
+                    },
+                    "exerciseNumber": {
+                        "N": "2"
+                    },
+                    "muscleGroupName": {
+                        "S": "Pectorals"
+                    },
+                    "exerciseName": {
+                        "S": "Bench Press"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "equipmentId": {
+                        "S": "B00000000"
+                    },
+                    "exerciseNumber": {
+                        "N": "3"
+                    },
+                    "muscleGroupName": {
+                        "S": "Deltoids"
+                    },
+                    "exerciseName": {
+                        "S": "Overhead Press"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "equipmentId": {
+                        "S": "B00000000"
+                    },
+                    "exerciseNumber": {
+                        "N": "4"
+                    },
+                    "muscleGroupName": {
+                        "S": "Biceps"
+                    },
+                    "exerciseName": {
+                        "S": "Barbell Curl"
+                    }
+                }
+            }
+        }
+    ]
+}
+

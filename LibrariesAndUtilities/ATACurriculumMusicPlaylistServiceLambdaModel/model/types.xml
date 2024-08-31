@@ -24,6 +24,6 @@
     <enumValue value="SHUFFLED" name="SHUFFLED"/>
   </enum>
   <enumjava target="SongOrder">
-    <class value="com.amazon.ata.music.playlist.service.models.SongOrder"/>
+    <class value="models.com.amazon.ata.gym.routine.service.SongOrder"/>
   </enumjava>
 </definition>
