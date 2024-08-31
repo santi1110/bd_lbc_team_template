@@ -1,0 +1,59 @@
+@startuml
+
+actor "Client" as client
+participant "API Gateway/Lambda" as apiGateway
+participant "GetRoutineExercisesActivity" as getRoutineExercisesActivity
+participant "RoutineDao" as routineDao
+database "DynamoDB" as dynamoDB
+
+title Get Routine Exercises
+
+client -> apiGateway : HTTP Request
+activate apiGateway
+
+apiGateway -> getRoutineExercisesActivity : GetRoutineExercisesRequest
+activate getRoutineExercisesActivity
+
+getRoutineExercisesActivity -> routineDao : getRoutine(id)
+activate routineDao
+
+routineDao -> dynamoDB : lookup by routine id
+activate dynamoDB
+
+alt if routine does not exist
+dynamoDB --> routineDao : return with no item data
+routineDao --> getRoutineExercisesActivity: throw RoutineNotFoundException
+getRoutineExercisesActivity --> apiGateway: propagate RoutineNotFoundException
+apiGateway --> client: return 400 response
+else else continue
+end
+
+dynamoDB --> routineDao: return routine data
+deactivate dynamoDB
+
+routineDao --> getRoutineExercisesActivity : return Routine object
+deactivate routineDao
+
+alt if request.order is provided and is SHUFFLED
+getRoutineExercisesActivity -> getRoutineExercisesActivity: shuffle exercise list
+
+else else if request.order is provided and is REVERSED
+getRoutineExercisesActivity -> getRoutineExercisesActivity: reverse exercise list
+else else continue
+end
+
+loop for each exercise in exercise list
+getRoutineExercisesActivity -> getRoutineExercisesActivity: Create ExerciseModel
+getRoutineExercisesActivity -> getRoutineExercisesActivity: SetExerciseModel fields with RoutineExercise data
+getRoutineExercisesActivity -> getRoutineExercisesActivity: store ExerciseModel in list
+end
+
+getRoutineExercisesActivity -> getRoutineExercisesActivity: Create GetRoutineExercisesResult and set ExerciseModel list
+
+getRoutineExercisesActivity --> apiGateway : return GetRoutineExercisesResult
+deactivate getRoutineExercisesActivity
+
+apiGateway --> client : return 200 response with GetRoutineExercisesResult data
+deactivate apiGateway
+
+@enduml

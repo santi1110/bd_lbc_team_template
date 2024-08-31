@@ -3,7 +3,6 @@ package com.amazon.ata.gym.routine.service.activity;
 import com.amazon.ata.gym.routine.service.converters.ModelConverter;
 import com.amazon.ata.gym.routine.service.dynamodb.models.Routine;
 import com.amazon.ata.gym.routine.service.exceptions.InvalidAttributeValueException;
-import com.amazon.ata.gym.routine.service.models.requests.CreateRoutineRequest;
 import com.amazon.ata.gym.routine.service.models.results.CreateRoutineResult;
 import com.amazon.ata.gym.routine.service.models.RoutineModel;
 import com.amazon.ata.gym.routine.service.dynamodb.RoutineDao;

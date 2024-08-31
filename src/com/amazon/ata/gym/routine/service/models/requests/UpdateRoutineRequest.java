@@ -3,35 +3,38 @@ package com.amazon.ata.gym.routine.service.models.requests;
 import java.util.Objects;
 import java.util.Set;
 
-public class UpdatePlaylistRequest {
-    private String id;
-    private String name;
-    private String customerId;
-    private Set<String> tags;
+/**
+ * Request class to update a gym routine.
+ */
+public class UpdateRoutineRequest {
+    private String routineId; // Unique identifier for the gym routine
+    private String name; // Name of the routine
+    private String customerId; // Customer ID associated with the routine
+    private Set<String> tags; // Tags associated with the routine
 
-    public UpdatePlaylistRequest() {
+    public UpdateRoutineRequest() {
     }
 
-    public UpdatePlaylistRequest(String id, String name, String customerId, Set<String> tags) {
-        this.id = id;
+    public UpdateRoutineRequest(String routineId, String name, String customerId, Set<String> tags) {
+        this.routineId = routineId;
         this.name = name;
         this.customerId = customerId;
         this.tags = tags;
     }
 
-    public UpdatePlaylistRequest(Builder builder) {
-        this.id = builder.id;
+    public UpdateRoutineRequest(Builder builder) {
+        this.routineId = builder.routineId;
         this.name = builder.name;
         this.customerId = builder.customerId;
         this.tags = builder.tags;
     }
 
-    public String getId() {
-        return id;
+    public String getRoutineId() {
+        return routineId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setRoutineId(String routineId) {
+        this.routineId = routineId;
     }
 
     public String getName() {
@@ -62,8 +65,8 @@ public class UpdatePlaylistRequest {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        UpdatePlaylistRequest that = (UpdatePlaylistRequest) o;
-        return Objects.equals(id, that.id) &&
+        UpdateRoutineRequest that = (UpdateRoutineRequest) o;
+        return Objects.equals(routineId, that.routineId) &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(customerId, that.customerId) &&
                 Objects.equals(tags, that.tags);
@@ -71,13 +74,13 @@ public class UpdatePlaylistRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, customerId, tags);
+        return Objects.hash(routineId, name, customerId, tags);
     }
 
     @Override
     public String toString() {
-        return "UpdatePlaylistRequest{" +
-                "id='" + id + '\'' +
+        return "UpdateRoutineRequest{" +
+                "routineId='" + routineId + '\'' +
                 ", name='" + name + '\'' +
                 ", customerId='" + customerId + '\'' +
                 ", tags=" + tags +
@@ -89,7 +92,7 @@ public class UpdatePlaylistRequest {
     }
 
     public static final class Builder {
-        private String id;
+        private String routineId;
         private String name;
         private String customerId;
         private Set<String> tags;
@@ -97,8 +100,8 @@ public class UpdatePlaylistRequest {
         private Builder() {
         }
 
-        public Builder withId(String idToUse) {
-            this.id = idToUse;
+        public Builder withRoutineId(String routineIdToUse) {
+            this.routineId = routineIdToUse;
             return this;
         }
 
@@ -117,8 +120,8 @@ public class UpdatePlaylistRequest {
             return this;
         }
 
-        public UpdatePlaylistRequest build() {
-            return new UpdatePlaylistRequest(this);
+        public UpdateRoutineRequest build() {
+            return new UpdateRoutineRequest(this);
         }
     }
 }

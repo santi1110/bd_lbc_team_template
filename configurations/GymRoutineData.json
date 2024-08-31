@@ -3,9 +3,6 @@
         {
             "PutRequest": {
                 "Item": {
-                    "equipmentId": {
-                        "S": "B019HKJTCI"
-                    },
                     "exerciseNumber": {
                         "N": "6"
                     },
@@ -21,9 +18,6 @@
         {
             "PutRequest": {
                 "Item": {
-                    "equipmentId": {
-                        "S": "B00000000"
-                    },
                     "exerciseNumber": {
                         "N": "1"
                     },
@@ -39,9 +33,6 @@
         {
             "PutRequest": {
                 "Item": {
-                    "equipmentId": {
-                        "S": "AB00000000"
-                    },
                     "exerciseNumber": {
                         "N": "2"
                     },
@@ -57,9 +48,6 @@
         {
             "PutRequest": {
                 "Item": {
-                    "equipmentId": {
-                        "S": "B00000000"
-                    },
                     "exerciseNumber": {
                         "N": "3"
                     },
@@ -75,9 +63,6 @@
         {
             "PutRequest": {
                 "Item": {
-                    "equipmentId": {
-                        "S": "B00000000"
-                    },
                     "exerciseNumber": {
                         "N": "4"
                     },
@@ -92,4 +77,5 @@
         }
     ]
 }
+
 

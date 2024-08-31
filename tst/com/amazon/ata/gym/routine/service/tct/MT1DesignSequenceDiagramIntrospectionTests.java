@@ -8,9 +8,9 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 @Tag("MT1-Design")
 public class MT1DesignSequenceDiagramIntrospectionTests {
-    private static final String GET_PLAYLIST_SEQUENCE_DIAGRAM_PATH = "mastery-task1-get-playlist-SD.puml";
+    private static final String GET_PLAYLIST_SEQUENCE_DIAGRAM_PATH = "mastery-task1-get-routine-SD.puml";
     private static final String CREATE_PLAYLIST_SEQUENCE_DIAGRAM_PATH =
-            "mastery-task1-create-playlist-SD.puml";
+            "mastery-task1-create-routine-SD.puml";
 
     @ParameterizedTest
     @ValueSource(strings = {"GetPlaylistActivity", "PlaylistDao"})

@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 @Tag("MT2-Design")
 public class MT2DesignIntrospectionTests {
-    private static final String CLASS_DIAGRAM_PATH = "mastery-task1-music-playlist-CD.puml";
+    private static final String CLASS_DIAGRAM_PATH = "mastery-task1-gym-routine-CD.puml";
 
     private String content;
 

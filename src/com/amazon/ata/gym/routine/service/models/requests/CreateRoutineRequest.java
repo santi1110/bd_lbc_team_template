@@ -3,21 +3,24 @@ package com.amazon.ata.gym.routine.service.models.requests;
 import java.util.List;
 import java.util.Objects;
 
-public class CreatePlaylistRequest {
-    private String name;
-    private String customerId;
-    private List<String> tags;
+/**
+ * Request class to create a new gym routine.
+ */
+public class CreateRoutineRequest {
+    private String name; // Name of the gym routine
+    private String customerId; // Customer ID associated with the routine
+    private List<String> tags; // Tags associated with the routine
 
-    public CreatePlaylistRequest(String name, String customerId, List<String> tags) {
+    public CreateRoutineRequest() {
+    }
+
+    public CreateRoutineRequest(String name, String customerId, List<String> tags) {
         this.name = name;
         this.customerId = customerId;
         this.tags = tags;
     }
 
-    public CreatePlaylistRequest() {
-    }
-
-    public CreatePlaylistRequest(Builder builder) {
+    public CreateRoutineRequest(Builder builder) {
         this.name = builder.name;
         this.customerId = builder.customerId;
         this.tags = builder.tags;
@@ -51,7 +54,7 @@ public class CreatePlaylistRequest {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CreatePlaylistRequest that = (CreatePlaylistRequest) o;
+        CreateRoutineRequest that = (CreateRoutineRequest) o;
         return Objects.equals(name, that.name) &&
                 Objects.equals(customerId, that.customerId) &&
                 Objects.equals(tags, that.tags);
@@ -64,39 +67,8 @@ public class CreatePlaylistRequest {
 
     @Override
     public String toString() {
-        return "CreatePlaylistRequest{" +
+        return "CreateRoutineRequest{" +
                 "name='" + name + '\'' +
                 ", customerId='" + customerId + '\'' +
-                ", tags=" + tags +
-                '}';
-    }
 
-    public static Builder builder() { return new Builder(); }
 
-    public static final class Builder {
-        private String name;
-        private String customerId;
-        private List<String> tags;
-
-        private Builder() {
-
-        }
-
-        public Builder withName(String nameToUse) {
-            this.name = nameToUse;
-            return this;
-        }
-
-        public Builder withCustomerId(String customerIdToUse) {
-            this.customerId = customerIdToUse;
-            return this;
-        }
-
-        public Builder withTags(List<String> tagsToUse) {
-            this.tags = tagsToUse;
-            return this;
-        }
-
-        public CreatePlaylistRequest build() { return new CreatePlaylistRequest(this); }
-    }
-}

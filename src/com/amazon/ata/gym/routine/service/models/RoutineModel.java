@@ -3,22 +3,25 @@ package com.amazon.ata.gym.routine.service.models;
 import java.util.List;
 import java.util.Objects;
 
-public class PlaylistModel {
+/**
+ * Model class representing a gym routine.
+ */
+public class RoutineModel {
     private String id;
     private String name;
     private String customerId;
-    private int songCount;
+    private int exerciseCount; // Changed from songCount to exerciseCount
     private List<String> tags;
 
-    public PlaylistModel() {
+    public RoutineModel() {
 
     }
 
-    public PlaylistModel(Builder builder) {
+    public RoutineModel(Builder builder) {
         this.id = builder.id;
         this.name = builder.name;
         this.customerId = builder.customerId;
-        this.songCount = builder.songCount;
+        this.exerciseCount = builder.exerciseCount; // Updated field
         this.tags = builder.tags;
     }
 
@@ -46,12 +49,12 @@ public class PlaylistModel {
         this.customerId = customerId;
     }
 
-    public int getSongCount() {
-        return songCount;
+    public int getExerciseCount() { // Updated method name
+        return exerciseCount;
     }
 
-    public void setSongCount(int songCount) {
-        this.songCount = songCount;
+    public void setExerciseCount(int exerciseCount) { // Updated method name
+        this.exerciseCount = exerciseCount;
     }
 
     public List<String> getTags() {
@@ -66,8 +69,8 @@ public class PlaylistModel {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PlaylistModel that = (PlaylistModel) o;
-        return songCount == that.songCount &&
+        RoutineModel that = (RoutineModel) o;
+        return exerciseCount == that.exerciseCount && // Updated field
                 Objects.equals(id, that.id) &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(customerId, that.customerId) &&
@@ -76,16 +79,16 @@ public class PlaylistModel {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, customerId, songCount, tags);
+        return Objects.hash(id, name, customerId, exerciseCount, tags); // Updated field
     }
 
     @Override
     public String toString() {
-        return "PlaylistModel{" +
+        return "RoutineModel{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", customerId='" + customerId + '\'' +
-                ", songCount=" + songCount +
+                ", exerciseCount=" + exerciseCount + // Updated field
                 ", tags=" + tags +
                 '}';
     }
@@ -96,7 +99,7 @@ public class PlaylistModel {
         private String id;
         private String name;
         private String customerId;
-        private int songCount;
+        private int exerciseCount; // Updated field
         private List<String> tags;
 
         public Builder withId(String idToUse) {
@@ -114,8 +117,8 @@ public class PlaylistModel {
             return this;
         }
 
-        public Builder withSongCount(int songCountToUse) {
-            this.songCount = songCountToUse;
+        public Builder withExerciseCount(int exerciseCountToUse) { // Updated method
+            this.exerciseCount = exerciseCountToUse;
             return this;
         }
 
@@ -124,6 +127,9 @@ public class PlaylistModel {
             return this;
         }
 
-        public PlaylistModel build() {return new PlaylistModel(this);}
+        public RoutineModel build() {
+            return new RoutineModel(this);
+        }
     }
 }
+

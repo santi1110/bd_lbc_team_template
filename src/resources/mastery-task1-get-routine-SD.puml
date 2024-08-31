@@ -1,0 +1,44 @@
+@startuml
+title Get Routine
+
+actor Client
+participant "API Gateway" as APIGateway
+participant Lambda
+participant GetRoutineActivity
+participant RoutineDao
+participant ModelConverter
+database DynamoDB
+
+Client -> APIGateway : GET /routines/:id
+activate Client
+APIGateway -> Lambda
+activate Lambda
+activate GetRoutineActivity
+activate RoutineDao
+Lambda -> GetRoutineActivity : handleRequest(GetRoutineRequest, Context)
+GetRoutineActivity -> RoutineDao : getRoutine(requestedId : String)
+RoutineDao -> DynamoDB : load routine by ID
+alt if routine ID does not exist
+    RoutineDao <-- DynamoDB : null
+    Lambda <-- RoutineDao : throw RoutineNotFoundException
+    APIGateway <-- Lambda
+    Client <-- APIGateway : 404 Response
+else otherwise, continue
+end
+
+RoutineDao <-- DynamoDB : Routine
+GetRoutineActivity <-- RoutineDao : Routine
+GetRoutineActivity -> ModelConverter : toRoutineModel(Routine)
+activate ModelConverter
+GetRoutineActivity <-- ModelConverter : RoutineModel
+deactivate ModelConverter
+Lambda <-- GetRoutineActivity : GetRoutineResult
+APIGateway <-- Lambda
+deactivate RoutineDao
+deactivate GetRoutineActivity
+deactivate Lambda
+Client <-- APIGateway : 200 Response
+deactivate Client
+
+@enduml
+

@@ -1,0 +1,87 @@
+    @startuml
+
+    actor "Client" as client
+    participant "API Gateway/Lambda" as apiGateway
+    participant "AddExerciseToRoutineActivity" as addExerciseActivity
+    participant "RoutineDao" as routineDao
+    participant "ExerciseDao" as exerciseDao
+    database "DynamoDB" as dynamoDB
+
+    title Add Exercise To Routine
+
+    client -> apiGateway : HTTP Request
+    activate apiGateway
+
+    apiGateway -> addExerciseActivity : AddExerciseToRoutineRequest
+    activate addExerciseActivity
+
+    addExerciseActivity -> routineDao : getRoutine(id)
+    activate routineDao
+
+    routineDao -> dynamoDB : lookup by routine id
+    activate dynamoDB
+
+    alt Routine does not exist
+        dynamoDB --> routineDao : return with no item data
+        routineDao --> addExerciseActivity : throw RoutineNotFoundException
+        addExerciseActivity --> apiGateway : propagate RoutineNotFoundException
+        apiGateway --> client : return 400 response
+    else Routine exists
+        dynamoDB --> routineDao : return routine data
+        routineDao --> addExerciseActivity : return Routine object
+    end
+    deactivate dynamoDB
+    deactivate routineDao
+
+    addExerciseActivity -> exerciseDao : getExercise(exerciseId)
+    activate exerciseDao
+
+    exerciseDao -> dynamoDB : lookup by exercise id
+    activate dynamoDB
+
+    alt Exercise does not exist
+        dynamoDB --> exerciseDao : return with no exercise data
+        exerciseDao --> addExerciseActivity : throw ExerciseNotFoundException
+        addExerciseActivity --> apiGateway : propagate ExerciseNotFoundException
+        apiGateway --> client : return 400 response
+    else Exercise exists
+        dynamoDB --> exerciseDao : return with exercise data
+        exerciseDao --> addExerciseActivity : return Exercise object
+    end
+    deactivate dynamoDB
+    deactivate exerciseDao
+
+    alt If request.queueNext is provided and true
+        addExerciseActivity -> addExerciseActivity : add exercise to front of routine
+    else
+        addExerciseActivity -> addExerciseActivity : add exercise to back of routine
+    end
+
+    addExerciseActivity -> addExerciseActivity : update routine exercise count
+
+    addExerciseActivity -> routineDao : saveRoutine(Routine)
+    activate routineDao
+
+    routineDao -> dynamoDB : store Routine
+    activate dynamoDB
+
+    dynamoDB --> routineDao : return 200 response
+    deactivate dynamoDB
+    deactivate routineDao
+
+    loop for each exercise in routine
+        addExerciseActivity -> addExerciseActivity : Create ExerciseModel
+        addExerciseActivity -> addExerciseActivity : Set ExerciseModel fields with Exercise data
+        addExerciseActivity -> addExerciseActivity : store ExerciseModel in list
+    end
+
+    addExerciseActivity -> addExerciseActivity : Create AddExerciseToRoutineResult and set ExerciseModel list
+
+    addExerciseActivity --> apiGateway : return AddExerciseToRoutineResult
+    deactivate addExerciseActivity
+
+    apiGateway --> client : return 200 response with AddExerciseToRoutineResult data
+    deactivate apiGateway
+
+    @enduml
+
