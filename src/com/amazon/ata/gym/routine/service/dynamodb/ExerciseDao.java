@@ -1,6 +1,6 @@
 package com.amazon.ata.gym.routine.service.dynamodb;
 
-import com.amazon.ata.gym.routine.service.dynamodb.models.Exercise; // Updated model import
+import com.amazon.ata.gym.routine.service.dynamodb.models.Exercise;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 
 import javax.inject.Inject;
@@ -22,15 +22,17 @@ public class ExerciseDao {
     }
 
     /**
-     * Retrieves an exercise from the DynamoDB table using its ID.
+     * Retrieves an exercise from the DynamoDB table using its ID and exercise number.
      *
-     * @param id the ID of the exercise
+     * @param exerciseId the ID of the exercise
+     * @param exerciseNumber the number of the exercise
      * @return the {@link Exercise} object
      */
-    public Exercise getExercise(String id) {
-        return dynamoDbMapper.load(Exercise.class, id);
+    public Exercise getExercise(String exerciseId, Integer exerciseNumber) {
+        return dynamoDbMapper.load(Exercise.class, exerciseId, exerciseNumber);
     }
 
     // You might want to add other CRUD operations as needed, e.g., save, delete, etc.
 }
+
 

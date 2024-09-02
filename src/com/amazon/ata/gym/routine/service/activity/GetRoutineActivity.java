@@ -1,5 +1,6 @@
 package com.amazon.ata.gym.routine.service.activity;
 
+import com.amazon.ata.gym.routine.service.exceptions.RoutineNotFoundException;
 import com.amazon.ata.gym.routine.service.models.requests.GetRoutineRequest;
 import com.amazon.ata.gym.routine.service.models.results.GetRoutineResult;
 import com.amazon.ata.gym.routine.service.models.RoutineModel;
@@ -46,7 +47,7 @@ public class GetRoutineActivity implements RequestHandler<GetRoutineRequest, Get
     @Override
     public GetRoutineResult handleRequest(final GetRoutineRequest getRoutineRequest, Context context) {
         log.info("Received GetRoutineRequest {}", getRoutineRequest);
-        String requestedId = getRoutineRequest.getId();
+        String requestedId = getRoutineRequest.getRoutineId();
         Routine routine = routineDao.getRoutine(requestedId);
 
         if (routine == null) {

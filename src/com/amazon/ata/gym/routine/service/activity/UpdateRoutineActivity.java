@@ -58,7 +58,7 @@ public class UpdateRoutineActivity implements RequestHandler<UpdateRoutineReques
     public UpdateRoutineResult handleRequest(final UpdateRoutineRequest updateRoutineRequest, Context context) {
         log.info("Received UpdateRoutineRequest {}", updateRoutineRequest);
 
-        String routineId = updateRoutineRequest.getId();
+        String routineId = updateRoutineRequest.getRoutineId();
         Routine existingRoutine = routineDao.getRoutine(routineId);
 
         // Validate the request and perform updates

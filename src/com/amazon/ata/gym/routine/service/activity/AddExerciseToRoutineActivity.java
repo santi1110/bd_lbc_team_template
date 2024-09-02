@@ -67,9 +67,9 @@ public class AddExerciseToRoutineActivity implements RequestHandler<AddExerciseT
         }
 
         // Fetch the exercise by ID and order
-        Exercise exercise = exerciseDao.getExercise(addExerciseToRoutineRequest.getExerciseId(), addExerciseToRoutineRequest.getExerciseOrder());
+        Exercise exercise = exerciseDao.getExercise(addExerciseToRoutineRequest.getExerciseId(), addExerciseToRoutineRequest.getExerciseNumber());
         if (exercise == null) {
-            throw new ExerciseNotFoundException("Could not find exercise with ID " + addExerciseToRoutineRequest.getExerciseId() + " and order " + addExerciseToRoutineRequest.getExerciseOrder());
+            throw new ExerciseNotFoundException("Could not find exercise with ID " + addExerciseToRoutineRequest.getExerciseId() + " and order " + addExerciseToRoutineRequest.getExerciseNumber());
         }
 
         // Convert Exercise to ExerciseModel

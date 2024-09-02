@@ -1,7 +1,6 @@
 package com.amazon.ata.gym.routine.service.models.requests;
 
 import com.amazon.ata.gym.routine.service.models.ExerciseOrder; // Ensure this class is defined
-import com.amazon.ata.gym.routine.service.models.SongOrder;
 
 import java.util.Objects;
 
@@ -10,12 +9,12 @@ import java.util.Objects;
  */
 public class GetRoutineExercisesRequest {
     private String routineId; // Unique identifier for the gym routine
-    private SongOrder order; // Order in which to return the exercises
+    private ExerciseOrder order; // Order in which to return the exercises
 
     public GetRoutineExercisesRequest() {
     }
 
-    public GetRoutineExercisesRequest(String routineId, SongOrder order) {
+    public GetRoutineExercisesRequest(String routineId, ExerciseOrder order) {
         this.routineId = routineId;
         this.order = order;
     }
@@ -33,11 +32,11 @@ public class GetRoutineExercisesRequest {
         this.routineId = routineId;
     }
 
-    public SongOrder getOrder() {
+    public ExerciseOrder getOrder() {
         return order;
     }
 
-    public void setOrder(SongOrder order) {
+    public void setOrder(ExerciseOrder order) {
         this.order = order;
     }
 
@@ -63,11 +62,13 @@ public class GetRoutineExercisesRequest {
                 '}';
     }
 
-    public static Builder builder() { return new Builder(); }
+    public static Builder builder() {
+        return new Builder();
+    }
 
     public static final class Builder {
         private String routineId;
-        private SongOrder order;
+        private ExerciseOrder order;
 
         private Builder() {
         }
@@ -77,7 +78,7 @@ public class GetRoutineExercisesRequest {
             return this;
         }
 
-        public Builder withOrder(SongOrder orderToUse) {
+        public Builder withOrder(ExerciseOrder orderToUse) {
             this.order = orderToUse;
             return this;
         }
@@ -87,4 +88,6 @@ public class GetRoutineExercisesRequest {
         }
     }
 }
+
+
 

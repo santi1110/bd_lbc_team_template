@@ -4,24 +4,24 @@ import java.util.Objects;
 
 public class AddExerciseToRoutineRequest {
     private String routineId;
-    private String equipmentId;
-    private int setNumber;
+    private String exerciseId;
+    private int exerciseNumber;
     private boolean queueNext;
 
     public AddExerciseToRoutineRequest() {
     }
 
-    public AddExerciseToRoutineRequest(String routineId, String equipmentId, int setNumber, boolean queueNext) {
+    public AddExerciseToRoutineRequest(String routineId, String exerciseId, int exerciseNumber, boolean queueNext) {
         this.routineId = routineId;
-        this.equipmentId = equipmentId;
-        this.setNumber = setNumber;
+        this.exerciseId = exerciseId;
+        this.exerciseNumber = exerciseNumber;
         this.queueNext = queueNext;
     }
 
     public AddExerciseToRoutineRequest(Builder builder) {
         this.routineId = builder.routineId;
-        this.equipmentId = builder.equipmentId;
-        this.setNumber = builder.setNumber;
+        this.exerciseId = builder.exerciseId;
+        this.exerciseNumber = builder.exerciseNumber;
         this.queueNext = builder.queueNext;
     }
 
@@ -33,20 +33,20 @@ public class AddExerciseToRoutineRequest {
         this.routineId = routineId;
     }
 
-    public String getEquipmentId() {
-        return equipmentId;
+    public String getExerciseId() {
+        return exerciseId;
     }
 
-    public void setEquipmentId(String equipmentId) {
-        this.equipmentId = equipmentId;
+    public void setExerciseId(String exerciseId) {
+        this.exerciseId = exerciseId;
     }
 
-    public int getSetNumber() {
-        return setNumber;
+    public int getExerciseNumber() {
+        return exerciseNumber;
     }
 
-    public void setSetNumber(int setNumber) {
-        this.setNumber = setNumber;
+    public void setExerciseNumber(int exerciseNumber) {
+        this.exerciseNumber = exerciseNumber;
     }
 
     public boolean isQueueNext() {
@@ -62,8 +62,57 @@ public class AddExerciseToRoutineRequest {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AddExerciseToRoutineRequest that = (AddExerciseToRoutineRequest) o;
-        return setNumber == that.setNumber &&
+        return exerciseNumber == that.exerciseNumber &&
                 queueNext == that.queueNext &&
                 Objects.equals(routineId, that.routineId) &&
-                Objects.equals(equipmentId, that.eq
+                Objects.equals(exerciseId, that.exerciseId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(routineId, exerciseId, exerciseNumber, queueNext);
+    }
+
+    @Override
+    public String toString() {
+        return "AddExerciseToRoutineRequest{" +
+                "routineId='" + routineId + '\'' +
+                ", exerciseId='" + exerciseId + '\'' +
+                ", exerciseNumber=" + exerciseNumber +
+                ", queueNext=" + queueNext +
+                '}';
+    }
+
+    public static class Builder {
+        private String routineId;
+        private String exerciseId;
+        private int exerciseNumber;
+        private boolean queueNext;
+
+        public Builder withRoutineId(String routineId) {
+            this.routineId = routineId;
+            return this;
+        }
+
+        public Builder withExerciseId(String exerciseId) {
+            this.exerciseId = exerciseId;
+            return this;
+        }
+
+        public Builder withExerciseNumber(int exerciseNumber) {
+            this.exerciseNumber = exerciseNumber;
+            return this;
+        }
+
+        public Builder withQueueNext(boolean queueNext) {
+            this.queueNext = queueNext;
+            return this;
+        }
+
+        public AddExerciseToRoutineRequest build() {
+            return new AddExerciseToRoutineRequest(this);
+        }
+    }
+}
+
 

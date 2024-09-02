@@ -36,11 +36,12 @@ public class ModelConverter {
      */
     public ExerciseModel toExerciseModel(Exercise exercise) {
         return ExerciseModel.builder()
-                .withId(exercise.getId())
-                .withName(exercise.getName())
-                .withReps(exercise.getReps()) // Updated attributes
-                .withSets(exercise.getSets()) // Updated attributes
+                .withExerciseId(exercise.getExerciseId())
+                .withRoutineId(exercise.getExerciseId()) // Corrected method name
+                .withExerciseOrder(exercise.getExerciseOrder()) // Corrected method name
+                .withExerciseName(exercise.getExerciseName()) // Corrected method name
                 .build();
     }
+
 }
 

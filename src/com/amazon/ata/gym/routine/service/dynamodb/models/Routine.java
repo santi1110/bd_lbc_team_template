@@ -1,5 +1,6 @@
 package com.amazon.ata.gym.routine.service.dynamodb.models;
 
+import com.amazon.ata.gym.routine.service.converters.ExerciseLinkedListConverter;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;

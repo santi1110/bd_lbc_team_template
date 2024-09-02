@@ -52,9 +52,9 @@ public class GetRoutineExercisesActivity implements RequestHandler<GetRoutineExe
     public GetRoutineExercisesResult handleRequest(final GetRoutineExercisesRequest getRoutineExercisesRequest, Context context) {
         log.info("Received GetRoutineExercisesRequest {}", getRoutineExercisesRequest);
 
-        Routine routine = routineDao.getRoutine(getRoutineExercisesRequest.getId());
+        Routine routine = routineDao.getRoutine(getRoutineExercisesRequest.getRoutineId());
         if (routine == null) {
-            throw new RoutineNotFoundException("Could not find routine with id " + getRoutineExercisesRequest.getId());
+            throw new RoutineNotFoundException("Could not find routine with id " + getRoutineExercisesRequest.getRoutineId());
         }
 
         // Convert Exercise to ExerciseModel

@@ -17,12 +17,12 @@ Resources:
       AttributeDefinitions:
         - AttributeName: "exerciseId"
           AttributeType: "S"
-        - AttributeName: "exerciseOrder"
+        - AttributeName: "exerciseNumber"
           AttributeType: "N"
       KeySchema:
         - AttributeName: "exerciseId"
           KeyType: "HASH"
-        - AttributeName: "exerciseOrder"
+        - AttributeName: "exerciseNumber"
           KeyType: "RANGE"
       BillingMode: "PAY_PER_REQUEST"
       TableName: "exercises"

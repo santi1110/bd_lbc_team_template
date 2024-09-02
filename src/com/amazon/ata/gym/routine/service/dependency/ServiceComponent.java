@@ -12,12 +12,12 @@ public interface ServiceComponent {
     void inject(AddExerciseToRoutineActivityProvider addExerciseToRoutineActivityProvider);
     void inject(CreateRoutineActivityProvider createRoutineActivityProvider);
     void inject(GetRoutineActivityProvider getRoutineActivityProvider);
-    void inject(GetExercisesFromRoutineActivityProvider getExercisesFromRoutineActivityProvider);
+    void inject(GetRoutineExercisesActivityProvider getExercisesFromRoutineActivityProvider);
     void inject(UpdateRoutineActivityProvider updateRoutineActivityProvider);
 
     AddExerciseToRoutineActivity provideAddExerciseToRoutineActivity();
     CreateRoutineActivity provideCreateRoutineActivity();
     GetRoutineActivity provideGetRoutineActivity();
-    GetExercisesFromRoutineActivity provideGetExercisesFromRoutineActivity();
+    GetRoutineExercisesActivity provideGetExercisesFromRoutineActivity();
     UpdateRoutineActivity provideUpdateRoutineActivity();
 }

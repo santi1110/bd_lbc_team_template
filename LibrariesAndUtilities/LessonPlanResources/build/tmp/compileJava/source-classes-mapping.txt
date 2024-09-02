@@ -1,7 +1,7 @@
-com/amazon/ata/resources/maps/gpmreminder/model/DevicePart.java
- com.amazon.ata.resources.maps.gpmreminder.model.DevicePart
 com/amazon/stock/Stock.java
  com.amazon.stock.Stock
+com/amazon/ata/resources/maps/gpmreminder/model/DevicePart.java
+ com.amazon.ata.resources.maps.gpmreminder.model.DevicePart
 com/amazon/stock/SellStockRequest.java
  com.amazon.stock.SellStockRequest
  com.amazon.stock.SellStockRequest$Builder
@@ -21,11 +21,11 @@ com/amazon/ata/retail/ProductInformation.java
 com/amazon/stock/StockPriceResponse.java
  com.amazon.stock.StockPriceResponse
  com.amazon.stock.StockPriceResponse$Builder
-com/amazon/ata/resources/maps/gpmreminder/model/GpmPartReminder.java
- com.amazon.ata.resources.maps.gpmreminder.model.GpmPartReminder
 com/amazon/stock/BuyStockRequest.java
  com.amazon.stock.BuyStockRequest
  com.amazon.stock.BuyStockRequest$Builder
+com/amazon/ata/resources/maps/gpmreminder/model/GpmPartReminder.java
+ com.amazon.ata.resources.maps.gpmreminder.model.GpmPartReminder
 com/amazon/stock/StockExchange.java
  com.amazon.stock.StockExchange
 com/amazon/ata/resources/model/PaymentInstrumentType.java

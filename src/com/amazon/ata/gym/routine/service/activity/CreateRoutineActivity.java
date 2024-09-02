@@ -3,6 +3,7 @@ package com.amazon.ata.gym.routine.service.activity;
 import com.amazon.ata.gym.routine.service.converters.ModelConverter;
 import com.amazon.ata.gym.routine.service.dynamodb.models.Routine;
 import com.amazon.ata.gym.routine.service.exceptions.InvalidAttributeValueException;
+import com.amazon.ata.gym.routine.service.models.requests.CreateRoutineRequest;
 import com.amazon.ata.gym.routine.service.models.results.CreateRoutineResult;
 import com.amazon.ata.gym.routine.service.models.RoutineModel;
 import com.amazon.ata.gym.routine.service.dynamodb.RoutineDao;
@@ -55,16 +56,16 @@ public class CreateRoutineActivity implements RequestHandler<CreateRoutineReques
     public CreateRoutineResult handleRequest(final CreateRoutineRequest createRoutineRequest, Context context) {
         log.info("Received CreateRoutineRequest {}", createRoutineRequest);
         String routineName = createRoutineRequest.getName();
-        String userId = createRoutineRequest.getUserId();
+        String customerId = createRoutineRequest.getCustomerId();
 
-        if (!isValidString(routineName) || !isValidString(userId)) {
+        if (!isValidString(routineName) || !isValidString(customerId)) {
             throw new InvalidAttributeValueException("Invalid characters in routine name or user ID");
         }
 
         Routine routine = new Routine();
         routine.setId(GymRoutineServiceUtils.generateRoutineId());
         routine.setName(routineName);
-        routine.setUserId(userId);
+        routine.setCustomerId(customerId);
         routine.setExerciseCount(0);
         routine.setTags(createRoutineRequest.getTags() != null ? new HashSet<>(createRoutineRequest.getTags()) : null);
         routine.setExerciseList(new ArrayList<>()); // Initialize with an empty list

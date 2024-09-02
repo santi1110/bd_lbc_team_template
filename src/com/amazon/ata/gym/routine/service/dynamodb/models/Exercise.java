@@ -13,9 +13,9 @@ import java.util.Objects;
 @DynamoDBTable(tableName = "exercises")
 public class Exercise {
     private String exerciseId; // Unique identifier for the exercise
-    private Integer exerciseNumber; // Order or identifier for the exercise in a routine
-    private String exerciseName; // Name of the exercise
-    private String exerciseDescription; // Description of the exercise
+    private Integer exerciseOrder; // Order or identifier for the exercise in a routine
+    private String muscleGroupName; // Name of the muscle group (formerly albumName)
+    private String exerciseName; // Name of the exercise (formerly songTitle)
 
     @Override
     public boolean equals(Object o) {
@@ -23,14 +23,14 @@ public class Exercise {
         if (o == null || getClass() != o.getClass()) return false;
         Exercise that = (Exercise) o;
         return Objects.equals(exerciseId, that.exerciseId) &&
-                Objects.equals(exerciseNumber, that.exerciseNumber) &&
-                Objects.equals(exerciseName, that.exerciseName) &&
-                Objects.equals(exerciseDescription, that.exerciseDescription);
+                Objects.equals(exerciseOrder, that.exerciseOrder) &&
+                Objects.equals(muscleGroupName, that.muscleGroupName) &&
+                Objects.equals(exerciseName, that.exerciseName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(exerciseId, exerciseNumber, exerciseName, exerciseDescription);
+        return Objects.hash(exerciseId, exerciseOrder, muscleGroupName, exerciseName);
     }
 
     @DynamoDBHashKey(attributeName = "exercise_id")
@@ -42,13 +42,22 @@ public class Exercise {
         this.exerciseId = exerciseId;
     }
 
-    @DynamoDBRangeKey(attributeName = "exercise_number")
-    public Integer getExerciseNumber() {
-        return exerciseNumber;
+    @DynamoDBRangeKey(attributeName = "exercise_order")
+    public Integer getExerciseOrder() {
+        return exerciseOrder;
     }
 
-    public void setExerciseNumber(Integer exerciseNumber) {
-        this.exerciseNumber = exerciseNumber;
+    public void setExerciseOrder(Integer exerciseOrder) {
+        this.exerciseOrder = exerciseOrder;
+    }
+
+    @DynamoDBAttribute(attributeName = "muscle_group_name")
+    public String getMuscleGroupName() {
+        return muscleGroupName;
+    }
+
+    public void setMuscleGroupName(String muscleGroupName) {
+        this.muscleGroupName = muscleGroupName;
     }
 
     @DynamoDBAttribute(attributeName = "exercise_name")
@@ -58,15 +67,6 @@ public class Exercise {
 
     public void setExerciseName(String exerciseName) {
         this.exerciseName = exerciseName;
-    }
-
-    @DynamoDBAttribute(attributeName = "exercise_description")
-    public String getExerciseDescription() {
-        return exerciseDescription;
-    }
-
-    public void setExerciseDescription(String exerciseDescription) {
-        this.exerciseDescription = exerciseDescription;
     }
 }
 

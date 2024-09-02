@@ -20,7 +20,7 @@ public class CreateRoutineRequest {
         this.tags = tags;
     }
 
-    public CreateRoutineRequest(Builder builder) {
+    private CreateRoutineRequest(Builder builder) {
         this.name = builder.name;
         this.customerId = builder.customerId;
         this.tags = builder.tags;
@@ -70,5 +70,36 @@ public class CreateRoutineRequest {
         return "CreateRoutineRequest{" +
                 "name='" + name + '\'' +
                 ", customerId='" + customerId + '\'' +
+                ", tags=" + tags +
+                '}';
+    }
 
+    /**
+     * Builder class for {@link CreateRoutineRequest}.
+     */
+    public static class Builder {
+        private String name;
+        private String customerId;
+        private List<String> tags;
+
+        public Builder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder withCustomerId(String customerId) {
+            this.customerId = customerId;
+            return this;
+        }
+
+        public Builder withTags(List<String> tags) {
+            this.tags = tags;
+            return this;
+        }
+
+        public CreateRoutineRequest build() {
+            return new CreateRoutineRequest(this);
+        }
+    }
+}
 
