@@ -1,6 +1,6 @@
 package com.amazon.ata.gym.routine.service.helpers;
 
-import com.amazon.ata.gym.routine.service.dynamodb.models.ExerciseTrack;
+import com.amazon.ata.gym.routine.service.dynamodb.models.Exercise;
 import com.amazon.ata.gym.routine.service.dynamodb.models.Routine;
 
 import java.util.Collections;
@@ -22,9 +22,9 @@ public final class RoutineTestHelper {
         routine.setCustomerId("CustomerABC");
         routine.setTags(Collections.singleton("tag"));
 
-        List<ExerciseTrack> exerciseTracks = new LinkedList<>();
+        List<Exercise> exerciseTracks = new LinkedList<>();
         for (int i = 0; i < numExercises; i++) {
-            exerciseTracks.add(ExerciseTrackTestHelper.generateExerciseTrack(i));
+            exerciseTracks.add(ExerciseTestHelper.generateExercise(i));
         }
         routine.setExerciseList(exerciseTracks);
         routine.setExerciseCount(exerciseTracks.size());

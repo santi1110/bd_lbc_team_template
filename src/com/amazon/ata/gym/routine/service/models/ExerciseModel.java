@@ -6,18 +6,18 @@ import java.util.Objects;
  * Model class representing an exercise.
  */
 public class ExerciseModel {
-    private String exerciseId; // Changed from id to exerciseId
-    private String routineId; // Changed from routine to routineId
-    private int exerciseOrder; // Changed from orderNumber to exerciseOrder
-    private String exerciseName; // Changed from name to exerciseName
+    private String exerciseId;
+    private String muscleGroupName;
+    private int exerciseNumber;
+    private String exerciseName;
 
     public ExerciseModel() {
     }
 
-    public ExerciseModel(Builder builder) {
+    private ExerciseModel(Builder builder) {
         this.exerciseId = builder.exerciseId;
-        this.routineId = builder.routineId;
-        this.exerciseOrder = builder.exerciseOrder;
+        this.muscleGroupName = builder.muscleGroupName;
+        this.exerciseNumber = builder.exerciseOrder;
         this.exerciseName = builder.exerciseName;
     }
 
@@ -29,20 +29,20 @@ public class ExerciseModel {
         this.exerciseId = exerciseId;
     }
 
-    public String getRoutineId() {
-        return routineId;
+    public String getMuscleGroupName() {
+        return muscleGroupName;
     }
 
-    public void setRoutineId(String routineId) {
-        this.routineId = routineId;
+    public void setMuscleGroupName(String muscleGroupName) {
+        this.muscleGroupName = muscleGroupName;
     }
 
-    public int getExerciseOrder() {
-        return exerciseOrder;
+    public int getExerciseNumber() {
+        return exerciseNumber;
     }
 
-    public void setExerciseOrder(int exerciseOrder) {
-        this.exerciseOrder = exerciseOrder;
+    public void setExerciseNumber(int exerciseNumber) {
+        this.exerciseNumber = exerciseNumber;
     }
 
     public String getExerciseName() {
@@ -58,55 +58,57 @@ public class ExerciseModel {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ExerciseModel that = (ExerciseModel) o;
-        return exerciseOrder == that.exerciseOrder &&
+        return exerciseNumber == that.exerciseNumber &&
                 Objects.equals(exerciseId, that.exerciseId) &&
-                Objects.equals(routineId, that.routineId) &&
+                Objects.equals(muscleGroupName, that.muscleGroupName) &&
                 Objects.equals(exerciseName, that.exerciseName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(exerciseId, routineId, exerciseOrder, exerciseName);
+        return Objects.hash(exerciseId, muscleGroupName, exerciseNumber, exerciseName);
     }
 
     @Override
     public String toString() {
         return "ExerciseModel{" +
                 "exerciseId='" + exerciseId + '\'' +
-                ", routineId='" + routineId + '\'' +
-                ", exerciseOrder=" + exerciseOrder +
+                ", muscleGroupName='" + muscleGroupName + '\'' +
+                ", exerciseOrder=" + exerciseNumber +
                 ", exerciseName='" + exerciseName + '\'' +
                 '}';
     }
 
-    public static Builder builder() { return new Builder(); }
+    public static Builder builder() {
+        return new Builder();
+    }
 
     public static final class Builder {
         private String exerciseId;
-        private String routineId;
+        private String muscleGroupName;
         private int exerciseOrder;
         private String exerciseName;
 
         private Builder() {
         }
 
-        public Builder withExerciseId(String exerciseIdToUse) {
-            this.exerciseId = exerciseIdToUse;
+        public Builder withExerciseId(String exerciseId) {
+            this.exerciseId = exerciseId;
             return this;
         }
 
-        public Builder withRoutineId(String routineIdToUse) {
-            this.routineId = routineIdToUse;
+        public Builder withMuscleGroupName(String muscleGroupName) {
+            this.muscleGroupName = muscleGroupName;
             return this;
         }
 
-        public Builder withExerciseOrder(int exerciseOrderToUse) {
-            this.exerciseOrder = exerciseOrderToUse;
+        public Builder withExerciseOrder(int exerciseOrder) {
+            this.exerciseOrder = exerciseOrder;
             return this;
         }
 
-        public Builder withExerciseName(String exerciseNameToUse) {
-            this.exerciseName = exerciseNameToUse;
+        public Builder withExerciseName(String exerciseName) {
+            this.exerciseName = exerciseName;
             return this;
         }
 

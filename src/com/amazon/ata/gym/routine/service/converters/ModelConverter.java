@@ -1,8 +1,8 @@
 package com.amazon.ata.gym.routine.service.converters;
 
-import com.amazon.ata.gym.routine.service.dynamodb.models.Exercise; // Updated model import
-import com.amazon.ata.gym.routine.service.dynamodb.models.Routine; // Updated model import
-import com.amazon.ata.gym.routine.service.models.ExerciseModel; // Updated model import
+import com.amazon.ata.gym.routine.service.dynamodb.models.Exercise;
+import com.amazon.ata.gym.routine.service.dynamodb.models.Routine;
+import com.amazon.ata.gym.routine.service.models.ExerciseModel;
 import com.amazon.ata.gym.routine.service.models.RoutineModel;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class ModelConverter {
                 .withId(routine.getId())
                 .withName(routine.getName())
                 .withCustomerId(routine.getCustomerId())
-                .withExerciseCount(routine.getExerciseCount()) // Updated attribute
+                .withExerciseCount(routine.getExerciseCount())
                 .withTags(routine.getTags() != null ? new ArrayList<>(routine.getTags()) : null)
                 .build();
     }
@@ -37,11 +37,12 @@ public class ModelConverter {
     public ExerciseModel toExerciseModel(Exercise exercise) {
         return ExerciseModel.builder()
                 .withExerciseId(exercise.getExerciseId())
-                .withRoutineId(exercise.getExerciseId()) // Corrected method name
-                .withExerciseOrder(exercise.getExerciseOrder()) // Corrected method name
-                .withExerciseName(exercise.getExerciseName()) // Corrected method name
+                .withMuscleGroupName(exercise.getMuscleGroupName())
+                .withExerciseOrder(exercise.getExerciseNumber())
+                .withExerciseName(exercise.getExerciseName())
                 .build();
     }
-
 }
+
+
 

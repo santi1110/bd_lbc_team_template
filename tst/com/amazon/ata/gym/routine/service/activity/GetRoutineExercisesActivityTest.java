@@ -33,7 +33,7 @@ public class GetRoutineExercisesActivityTest {
         Routine routine = RoutineTestHelper.generateRoutineWithNExercises(3);
         String routineId = routine.getId();
         GetRoutineExercisesRequest request = GetRoutineExercisesRequest.builder()
-                .withId(routineId)
+                .withRoutineId(routineId)
                 .build();
         when(routineDao.getRoutine(routineId)).thenReturn(routine);
 
@@ -50,7 +50,7 @@ public class GetRoutineExercisesActivityTest {
         Routine emptyRoutine = RoutineTestHelper.generateRoutineWithNExercises(0);
         String routineId = emptyRoutine.getId();
         GetRoutineExercisesRequest request = GetRoutineExercisesRequest.builder()
-                .withId(routineId)
+                .withRoutineId(routineId)
                 .build();
         when(routineDao.getRoutine(routineId)).thenReturn(emptyRoutine);
 
@@ -67,7 +67,7 @@ public class GetRoutineExercisesActivityTest {
         // GIVEN
         String id = "missingID";
         GetRoutineExercisesRequest request = GetRoutineExercisesRequest.builder()
-                .withId(id)
+                .withRoutineId(id)
                 .build();
 
         // WHEN
@@ -179,4 +179,3 @@ public class GetRoutineExercisesActivityTest {
 //        // WHEN + THEN
 //        assertThrows(IllegalArgumentException.class, () -> getPlaylistSongsActivity.handleRequest(request));
 //    }
-}

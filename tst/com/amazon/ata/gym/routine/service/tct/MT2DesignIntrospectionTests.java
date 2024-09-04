@@ -28,7 +28,7 @@ public class MT2DesignIntrospectionTests {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"InvalidAttributeChangeException", "ExerciseTrackNotFoundException",
+    @ValueSource(strings = {"InvalidAttributeChangeException", "ExerciseNotFoundException",
             "InvalidAttributeValueException", "RoutineNotFoundException"})
     void mt2Design_getClassDiagram_containsExceptionClasses(String packagingClass) {
         PlantUmlClassDiagramAssertions.assertClassDiagramContainsClass(content, packagingClass);

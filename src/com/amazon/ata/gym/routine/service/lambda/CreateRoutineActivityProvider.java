@@ -3,6 +3,7 @@ package com.amazon.ata.gym.routine.service.lambda;
 import com.amazon.ata.gym.routine.service.activity.CreateRoutineActivity;
 import com.amazon.ata.gym.routine.service.dependency.DaggerServiceComponent;
 import com.amazon.ata.gym.routine.service.dependency.ServiceComponent;
+import com.amazon.ata.gym.routine.service.models.requests.CreateRoutineRequest;
 import com.amazon.ata.gym.routine.service.models.results.CreateRoutineResult;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;

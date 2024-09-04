@@ -17,15 +17,15 @@ public class MT2IntrospectionTests {
     @Test
     public void mt02_specificInvalidAttributeExceptions_shareParentInvalidAttributeException() {
         // GIVEN two exceptions created for MT02
-        log.info("Searching project for InvalidRoutineAttributeValueException class...");
+        log.info("Searching project for InvalidAttributeValueException class...");
         Class<?> valueException = ClassQuery.inContainingPackage(BASE_PACKAGE)
-                .withExactSimpleName("InvalidRoutineAttributeValueException")
+                .withExactSimpleName("InvalidAttributeValueException")
                 .withSubTypeOf(RuntimeException.class)
                 .findClassOrFail();
 
-        log.info("Searching project for InvalidRoutineAttributeChangeException class...");
+        log.info("Searching project for InvalidAttributeChangeException class...");
         Class<?> changeException = ClassQuery.inContainingPackage(BASE_PACKAGE)
-                .withExactSimpleName("InvalidRoutineAttributeChangeException")
+                .withExactSimpleName("InvalidAttributeChangeException")
                 .withSubTypeOf(RuntimeException.class)
                 .findClassOrFail();
 

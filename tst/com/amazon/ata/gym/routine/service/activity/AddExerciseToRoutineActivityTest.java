@@ -14,12 +14,12 @@ import com.amazon.ata.gym.routine.service.helpers.RoutineTestHelper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static org.mockito.MockitoAnnotations.initMocks;
 
 public class AddExerciseToRoutineActivityTest {
     @Mock
@@ -32,12 +32,12 @@ public class AddExerciseToRoutineActivityTest {
 
     @BeforeEach
     public void setup() {
-        initMocks(this);
+        MockitoAnnotations.openMocks(this);
         addExerciseToRoutineActivity = new AddExerciseToRoutineActivity(routineDao, exerciseDao);
     }
 
     @Test
-    void handleRequest_validRequest_addsExerciseToEndOfRoutine() {
+    void handleRequest_validRequest_addsExerciseToRoutine() {
         // GIVEN
         // a non-empty routine
         Routine originalRoutine = RoutineTestHelper.generateRoutine();
@@ -46,15 +46,16 @@ public class AddExerciseToRoutineActivityTest {
         // the new exercise to add to the routine
         Exercise exerciseToAdd = ExerciseTestHelper.generateExercise(2);
         String addedExerciseId = exerciseToAdd.getExerciseId();
-        int addedTrackNumber = exerciseToAdd.getTrackNumber();
+        int addedExerciseNumber = exerciseToAdd.getExerciseNumber();
 
         when(routineDao.getRoutine(routineId)).thenReturn(originalRoutine);
-        when(exerciseDao.getExercise(addedExerciseId, addedTrackNumber)).thenReturn(exerciseToAdd);
+        when(exerciseDao.getExercise(addedExerciseId, addedExerciseNumber)).thenReturn(exerciseToAdd);
 
-        AddExerciseToRoutineRequest request = AddExerciseToRoutineRequest.builder()
-                .withId(routineId)
+        AddExerciseToRoutineRequest request = new AddExerciseToRoutineRequest.Builder()
+                .withRoutineId(routineId)
                 .withExerciseId(addedExerciseId)
-                .withTrackNumber(addedTrackNumber)
+                .withExerciseNumber(addedExerciseNumber)
+                .withQueueNext(false) // or true, depending on your test scenario
                 .build();
 
         // WHEN
@@ -63,7 +64,7 @@ public class AddExerciseToRoutineActivityTest {
         // THEN
         verify(routineDao).saveRoutine(originalRoutine);
 
-        assertEquals(2, result.getExerciseList().size());
+        assertEquals(2, result.getExerciseList().size()); // Ensure size matches your expectation
         ExerciseModel secondExercise = result.getExerciseList().get(1);
         ExerciseTestHelper.assertExerciseEqualsExerciseModel(exerciseToAdd, secondExercise);
     }
@@ -72,10 +73,11 @@ public class AddExerciseToRoutineActivityTest {
     public void handleRequest_noMatchingRoutineId_throwsRoutineNotFoundException() {
         // GIVEN
         String routineId = "missing id";
-        AddExerciseToRoutineRequest request = AddExerciseToRoutineRequest.builder()
-                .withId(routineId)
+        AddExerciseToRoutineRequest request = new AddExerciseToRoutineRequest.Builder()
+                .withRoutineId(routineId)
                 .withExerciseId("exerciseId")
-                .withTrackNumber(1)
+                .withExerciseNumber(1)
+                .withQueueNext(false)
                 .build();
         when(routineDao.getRoutine(routineId)).thenThrow(new RoutineNotFoundException());
 
@@ -88,22 +90,28 @@ public class AddExerciseToRoutineActivityTest {
         // GIVEN
         Routine routine = RoutineTestHelper.generateRoutine();
         String routineId = routine.getId();
-        String exerciseId = "nonexistent exerciseId";
-        int trackNumber = -1;
-        AddExerciseToRoutineRequest request = AddExerciseToRoutineRequest.builder()
-                .withId(routineId)
+        String exerciseId = "nonexistent exercise";
+        int exerciseNumber = -1;
+        AddExerciseToRoutineRequest request = new AddExerciseToRoutineRequest.Builder()
+                .withRoutineId(routineId)
                 .withExerciseId(exerciseId)
-                .withTrackNumber(trackNumber)
+                .withExerciseNumber(exerciseNumber)
+                .withQueueNext(false)
                 .build();
 
         // WHEN
         when(routineDao.getRoutine(routineId)).thenReturn(routine);
-        when(exerciseDao.getExercise(exerciseId, trackNumber)).thenThrow(new ExerciseNotFoundException());
+        when(exerciseDao.getExercise(exerciseId, exerciseNumber)).thenThrow(new ExerciseNotFoundException());
 
         // THEN
         assertThrows(ExerciseNotFoundException.class, () -> addExerciseToRoutineActivity.handleRequest(request, null));
     }
 }
+
+
+
+
+
 
 
     /*@Test
@@ -173,4 +181,3 @@ public class AddExerciseToRoutineActivityTest {
         SongModel firstSong = result.getSongList().get(0);
         AlbumTrackTestHelper.assertAlbumTrackEqualsSongModel(albumTrackToAdd, firstSong);
     }*/
-}

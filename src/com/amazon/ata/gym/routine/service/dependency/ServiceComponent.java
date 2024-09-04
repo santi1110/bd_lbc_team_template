@@ -9,15 +9,17 @@ import javax.inject.Singleton;
 @Singleton
 @Component(modules = {DaoModule.class})
 public interface ServiceComponent {
+/*
     void inject(AddExerciseToRoutineActivityProvider addExerciseToRoutineActivityProvider);
     void inject(CreateRoutineActivityProvider createRoutineActivityProvider);
     void inject(GetRoutineActivityProvider getRoutineActivityProvider);
     void inject(GetRoutineExercisesActivityProvider getExercisesFromRoutineActivityProvider);
     void inject(UpdateRoutineActivityProvider updateRoutineActivityProvider);
+*/
 
     AddExerciseToRoutineActivity provideAddExerciseToRoutineActivity();
     CreateRoutineActivity provideCreateRoutineActivity();
     GetRoutineActivity provideGetRoutineActivity();
-    GetRoutineExercisesActivity provideGetExercisesFromRoutineActivity();
+    GetRoutineExercisesActivity provideGetRoutineExercisesActivity();
     UpdateRoutineActivity provideUpdateRoutineActivity();
 }

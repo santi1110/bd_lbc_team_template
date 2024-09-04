@@ -36,8 +36,8 @@ public class MT1DesignClassDiagramIntrospectionTests {
 
     @ParameterizedTest
     @ValueSource(strings = {"AddExerciseToRoutineActivity", "CreateRoutineActivity", "GetRoutineActivity",
-            "GetRoutineExercisesActivity", "UpdateRoutineActivity", "ExerciseTrack", "Routine", "ExerciseTrackDao",
-            "RoutineDao", "ExerciseTrackNotFoundException", "InvalidAttributeValueException",
+            "GetRoutineExercisesActivity", "UpdateRoutineActivity", "Exercise", "Routine", "ExerciseDao",
+            "RoutineDao", "ExerciseNotFoundException", "InvalidAttributeValueException",
             "RoutineNotFoundException"})
     void mt1Design_getClassDiagram_containsClasses(String packagingClass) {
         PlantUmlClassDiagramAssertions.assertClassDiagramContainsClass(content, packagingClass);
@@ -51,8 +51,8 @@ public class MT1DesignClassDiagramIntrospectionTests {
 
     private static Stream<Arguments> containsRelationshipProvider() {
         return Stream.of(
-                Arguments.of("Routine", "ExerciseTrack"),
-                Arguments.of("AddExerciseToRoutineActivity", "ExerciseTrackDao"),
+                Arguments.of("Routine", "Exercise"),
+                Arguments.of("AddExerciseToRoutineActivity", "ExerciseDao"),
                 Arguments.of("CreateRoutineActivity", "RoutineDao"),
                 Arguments.of("AddExerciseToRoutineActivity", "RoutineDao"),
                 Arguments.of("GetRoutineActivity", "RoutineDao"),
@@ -62,15 +62,15 @@ public class MT1DesignClassDiagramIntrospectionTests {
     }
 
     @Test
-    void mt1Design_getClassDiagram_containsExerciseTrackFields() {
+    void mt1Design_getClassDiagram_containsExerciseFields() {
         assertClassDiagramTypeContainsMember(
-                content, "ExerciseTrack", "@DynamoDBHashKey\\s*asin\\s*:\\s*String", "asin");
+                content, "Exercise", "@DynamoDBHashKey\\s*exerciseId\\s*:\\s*String", "exerciseId");
         assertClassDiagramTypeContainsMember(
-                content, "ExerciseTrack", "@DynamoDBRangeKey\\s*trackNumber\\s*:\\s*Integer", "trackNumber");
+                content, "Exercise", "@DynamoDBRangeKey\\s*exerciseNumber\\s*:\\s*Integer", "exerciseNumber");
         assertClassDiagramTypeContainsMember(
-                content, "ExerciseTrack", "albumName\\s*:\\s*String", "albumName");
+                content, "Exercise", "muscleGroupName\\s*:\\s*String", "muscleGroupName");
         assertClassDiagramTypeContainsMember(
-                content, "ExerciseTrack", "songTitle\\s*:\\s*String", "songTitle");
+                content, "Exercise", "exerciseName\\s*:\\s*String", "exerciseName");
     }
 
     @Test
@@ -86,11 +86,11 @@ public class MT1DesignClassDiagramIntrospectionTests {
         assertClassDiagramTypeContainsMember(
                 content, "Routine", "tags\\s*:\\s*Set<String>", "tags");
         assertClassDiagramTypeContainsMember(
-                content, "Routine", "exerciseList\\s*:\\s*List<ExerciseTrack>", "exerciseList");
+                content, "Routine", "exerciseList\\s*:\\s*List<Exercise>", "exerciseList");
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"ExerciseTrackDao", "RoutineDao"})
+    @ValueSource(strings = {"ExerciseDao", "RoutineDao"})
     void mt1Design_getClassDiagram_daosContainDynamoDBMapper(String type) {
         System.out.println("Class Diagram Content:\n" + content);
         assertClassDiagramTypeContainsMember(
@@ -112,4 +112,5 @@ public class MT1DesignClassDiagramIntrospectionTests {
                 Arrays.asList("String"));
     }
 }
+
 

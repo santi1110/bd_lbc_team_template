@@ -36,7 +36,7 @@ public class UpdateRoutineActivityTest {
         String expectedName = "new name";
 
         UpdateRoutineRequest request = UpdateRoutineRequest.builder()
-                .withId(id)
+                .withRoutineId(id)
                 .withCustomerId(expectedCustomerId)
                 .withName(expectedName)
                 .build();
@@ -71,7 +71,6 @@ public class UpdateRoutineActivityTest {
     public void handleRequest_invalidName_throwsInvalidAttributeValueException() {
         // GIVEN
         UpdateRoutineRequest request = UpdateRoutineRequest.builder()
-                .withId("id")
                 .withName("I'm illegal")
                 .withCustomerId("customerId")
                 .build();
@@ -85,7 +84,7 @@ public class UpdateRoutineActivityTest {
         // GIVEN
         String id = "id";
         UpdateRoutineRequest request = UpdateRoutineRequest.builder()
-                .withId(id)
+                .withRoutineId(id)
                 .withName("name")
                 .withCustomerId("customerId")
                 .build();
@@ -101,7 +100,7 @@ public class UpdateRoutineActivityTest {
         // GIVEN
         String id = "id";
         UpdateRoutineRequest request = UpdateRoutineRequest.builder()
-                .withId(id)
+                .withRoutineId(id)
                 .withName("name")
                 .withCustomerId("customerId")
                 .build();
