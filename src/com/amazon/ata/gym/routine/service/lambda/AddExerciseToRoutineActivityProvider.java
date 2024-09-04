@@ -8,9 +8,13 @@ import com.amazon.ata.gym.routine.service.models.results.AddExerciseToRoutineRes
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
 public class AddExerciseToRoutineActivityProvider implements RequestHandler<AddExerciseToRoutineRequest, AddExerciseToRoutineResult> {
 
     private static ServiceComponent serviceComponent;
+
 
     private AddExerciseToRoutineActivity addExerciseToRoutineActivity;
 

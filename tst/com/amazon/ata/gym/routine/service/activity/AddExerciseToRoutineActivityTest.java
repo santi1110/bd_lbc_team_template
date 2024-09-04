@@ -1,7 +1,7 @@
 package com.amazon.ata.gym.routine.service.activity;
 
-import com.amazon.ata.gym.routine.service.dynamodb.ExerciseDao;
-import com.amazon.ata.gym.routine.service.dynamodb.RoutineDao;
+import com.amazon.ata.gym.routine.service.dao.ExerciseDao;
+import com.amazon.ata.gym.routine.service.dao.RoutineDao;
 import com.amazon.ata.gym.routine.service.dynamodb.models.Exercise;
 import com.amazon.ata.gym.routine.service.dynamodb.models.Routine;
 import com.amazon.ata.gym.routine.service.exceptions.ExerciseNotFoundException;

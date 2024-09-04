@@ -1,4 +1,4 @@
-package com.amazon.ata.gym.routine.service.dynamodb;
+package com.amazon.ata.gym.routine.service.dao;
 
 import com.amazon.ata.gym.routine.service.dynamodb.models.Routine; // Updated model import
 import com.amazon.ata.gym.routine.service.exceptions.RoutineNotFoundException; // Updated exception import

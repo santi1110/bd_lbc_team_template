@@ -5,7 +5,7 @@ import com.amazon.ata.gym.routine.service.models.requests.GetRoutineRequest;
 import com.amazon.ata.gym.routine.service.models.results.GetRoutineResult;
 import com.amazon.ata.gym.routine.service.models.RoutineModel;
 import com.amazon.ata.gym.routine.service.converters.ModelConverter;
-import com.amazon.ata.gym.routine.service.dynamodb.RoutineDao;
+import com.amazon.ata.gym.routine.service.dao.RoutineDao;
 import com.amazon.ata.gym.routine.service.dynamodb.models.Routine;
 
 import com.amazonaws.services.lambda.runtime.Context;

@@ -5,8 +5,13 @@ import com.amazon.ata.gym.routine.service.activity.CreateRoutineActivity;
 import com.amazon.ata.gym.routine.service.activity.GetRoutineActivity;
 import com.amazon.ata.gym.routine.service.activity.GetRoutineExercisesActivity;
 import com.amazon.ata.gym.routine.service.activity.UpdateRoutineActivity;
-import com.amazon.ata.gym.routine.service.dynamodb.ExerciseDao;
-import com.amazon.ata.gym.routine.service.dynamodb.RoutineDao;
+import com.amazon.ata.gym.routine.service.dao.ExerciseDao;
+import com.amazon.ata.gym.routine.service.dao.RoutineDao;
+import com.amazon.ata.gym.routine.service.lambda.AddExerciseToRoutineActivityProvider;
+import com.amazon.ata.gym.routine.service.lambda.CreateRoutineActivityProvider;
+import com.amazon.ata.gym.routine.service.lambda.GetRoutineActivityProvider;
+import com.amazon.ata.gym.routine.service.lambda.GetRoutineExercisesActivityProvider;
+import com.amazon.ata.gym.routine.service.lambda.UpdateRoutineActivityProvider;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import dagger.internal.DoubleCheck;
@@ -56,6 +61,21 @@ public final class DaggerServiceComponent implements ServiceComponent {
             DaoModule_ProvideExerciseDaoFactory.create(
                 builder.daoModule, provideDynamoDBMapperProvider));
   }
+
+  @Override
+  public void inject(AddExerciseToRoutineActivityProvider addExerciseToRoutineActivityProvider) {}
+
+  @Override
+  public void inject(CreateRoutineActivityProvider createRoutineActivityProvider) {}
+
+  @Override
+  public void inject(GetRoutineActivityProvider getRoutineActivityProvider) {}
+
+  @Override
+  public void inject(GetRoutineExercisesActivityProvider getExercisesFromRoutineActivityProvider) {}
+
+  @Override
+  public void inject(UpdateRoutineActivityProvider updateRoutineActivityProvider) {}
 
   @Override
   public AddExerciseToRoutineActivity provideAddExerciseToRoutineActivity() {

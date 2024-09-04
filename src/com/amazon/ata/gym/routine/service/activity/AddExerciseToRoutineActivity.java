@@ -8,8 +8,8 @@ import com.amazon.ata.gym.routine.service.exceptions.RoutineNotFoundException;
 import com.amazon.ata.gym.routine.service.models.requests.AddExerciseToRoutineRequest;
 import com.amazon.ata.gym.routine.service.models.results.AddExerciseToRoutineResult;
 import com.amazon.ata.gym.routine.service.models.ExerciseModel;
-import com.amazon.ata.gym.routine.service.dynamodb.ExerciseDao;
-import com.amazon.ata.gym.routine.service.dynamodb.RoutineDao;
+import com.amazon.ata.gym.routine.service.dao.ExerciseDao;
+import com.amazon.ata.gym.routine.service.dao.RoutineDao;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;

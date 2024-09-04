@@ -1,22 +1,22 @@
 com/amazon/ata/gym/routine/service/tct/MT1DesignSequenceDiagramIntrospectionTests.java
  com.amazon.ata.gym.routine.service.tct.MT1DesignSequenceDiagramIntrospectionTests
+com/amazon/ata/gym/routine/service/tct/MT2IntrospectionTests.java
+ com.amazon.ata.gym.routine.service.tct.MT2IntrospectionTests
 com/amazon/ata/gym/routine/service/tct/MT2DesignIntrospectionTests.java
  com.amazon.ata.gym.routine.service.tct.MT2DesignIntrospectionTests
+com/amazon/ata/gym/routine/service/activity/AddExerciseToRoutineActivityTest.java
+ com.amazon.ata.gym.routine.service.activity.AddExerciseToRoutineActivityTest
+com/amazon/ata/gym/routine/service/helpers/ExerciseTestHelper.java
+ com.amazon.ata.gym.routine.service.helpers.ExerciseTestHelper
+com/amazon/ata/gym/routine/service/helpers/RoutineTestHelper.java
+ com.amazon.ata.gym.routine.service.helpers.RoutineTestHelper
 com/amazon/ata/gym/routine/service/tct/MT1DesignClassDiagramIntrospectionTests.java
  com.amazon.ata.gym.routine.service.tct.MT1DesignClassDiagramIntrospectionTests
 com/amazon/ata/gym/routine/service/activity/GetRoutineExercisesActivityTest.java
  com.amazon.ata.gym.routine.service.activity.GetRoutineExercisesActivityTest
-com/amazon/ata/gym/routine/service/tct/MT3IntrospectionTests.java
- com.amazon.ata.gym.routine.service.tct.MT3IntrospectionTests
-com/amazon/ata/gym/routine/service/helpers/RoutineTestHelper.java
- com.amazon.ata.gym.routine.service.helpers.RoutineTestHelper
 com/amazon/ata/gym/routine/service/activity/GetRoutineActivityTest.java
  com.amazon.ata.gym.routine.service.activity.GetRoutineActivityTest
-com/amazon/ata/gym/routine/service/helpers/ExerciseTestHelper.java
- com.amazon.ata.gym.routine.service.helpers.ExerciseTestHelper
-com/amazon/ata/gym/routine/service/activity/AddExerciseToRoutineActivityTest.java
- com.amazon.ata.gym.routine.service.activity.AddExerciseToRoutineActivityTest
 com/amazon/ata/gym/routine/service/activity/UpdateRoutineActivityTest.java
  com.amazon.ata.gym.routine.service.activity.UpdateRoutineActivityTest
-com/amazon/ata/gym/routine/service/tct/MT2IntrospectionTests.java
- com.amazon.ata.gym.routine.service.tct.MT2IntrospectionTests
+com/amazon/ata/gym/routine/service/tct/MT3IntrospectionTests.java
+ com.amazon.ata.gym.routine.service.tct.MT3IntrospectionTests

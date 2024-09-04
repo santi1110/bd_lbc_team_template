@@ -1,6 +1,6 @@
 package com.amazon.ata.gym.routine.service.dependency;
 
-import com.amazon.ata.gym.routine.service.dynamodb.ExerciseDao;
+import com.amazon.ata.gym.routine.service.dao.ExerciseDao;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;

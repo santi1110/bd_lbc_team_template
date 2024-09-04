@@ -1,7 +1,7 @@
 package com.amazon.ata.gym.routine.service.dependency;
 
-import com.amazon.ata.gym.routine.service.dynamodb.ExerciseDao; // Updated DAO import
-import com.amazon.ata.gym.routine.service.dynamodb.RoutineDao;   // Updated DAO import
+import com.amazon.ata.gym.routine.service.dao.ExerciseDao; // Updated DAO import
+import com.amazon.ata.gym.routine.service.dao.RoutineDao;   // Updated DAO import
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;

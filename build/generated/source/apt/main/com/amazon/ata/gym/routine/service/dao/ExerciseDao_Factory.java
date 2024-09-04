@@ -1,4 +1,4 @@
-package com.amazon.ata.gym.routine.service.dynamodb;
+package com.amazon.ata.gym.routine.service.dao;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import dagger.internal.Factory;

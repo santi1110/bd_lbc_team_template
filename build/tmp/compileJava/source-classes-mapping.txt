@@ -19,6 +19,8 @@ com/amazon/ata/gym/routine/service/models/results/GetRoutineExercisesResult.java
 com/amazon/ata/gym/routine/service/models/requests/UpdateRoutineRequest.java
  com.amazon.ata.gym.routine.service.models.requests.UpdateRoutineRequest
  com.amazon.ata.gym.routine.service.models.requests.UpdateRoutineRequest$Builder
+com/amazon/ata/gym/routine/service/dao/ExerciseDao.java
+ com.amazon.ata.gym.routine.service.dao.ExerciseDao
 com/amazon/ata/gym/routine/service/lambda/AddExerciseToRoutineActivityProvider.java
  com.amazon.ata.gym.routine.service.lambda.AddExerciseToRoutineActivityProvider
 com/amazon/ata/gym/routine/service/models/ExerciseOrder.java
@@ -45,6 +47,8 @@ com/amazon/ata/gym/routine/service/models/results/GetRoutineResult.java
 com/amazon/ata/gym/routine/service/models/requests/AddExerciseToRoutineRequest.java
  com.amazon.ata.gym.routine.service.models.requests.AddExerciseToRoutineRequest
  com.amazon.ata.gym.routine.service.models.requests.AddExerciseToRoutineRequest$Builder
+com/amazon/ata/gym/routine/service/dao/RoutineDao.java
+ com.amazon.ata.gym.routine.service.dao.RoutineDao
 com/amazon/ata/gym/routine/service/activity/GetRoutineActivity.java
  com.amazon.ata.gym.routine.service.activity.GetRoutineActivity
 com/amazon/ata/gym/routine/service/dependency/ServiceComponent.java
@@ -72,8 +76,6 @@ com/amazon/ata/gym/routine/service/models/RoutineModel.java
 com/amazon/ata/gym/routine/service/models/ExerciseModel.java
  com.amazon.ata.gym.routine.service.models.ExerciseModel
  com.amazon.ata.gym.routine.service.models.ExerciseModel$Builder
-com/amazon/ata/gym/routine/service/dynamodb/ExerciseDao.java
- com.amazon.ata.gym.routine.service.dynamodb.ExerciseDao
 com/amazon/ata/gym/routine/service/activity/CreateRoutineActivity.java
  com.amazon.ata.gym.routine.service.activity.CreateRoutineActivity
 com/amazon/ata/gym/routine/service/dynamodb/models/Routine.java
@@ -83,5 +85,3 @@ com/amazon/ata/gym/routine/service/lambda/CreateRoutineActivityProvider.java
 com/amazon/ata/gym/routine/service/models/results/AddExerciseToRoutineResult.java
  com.amazon.ata.gym.routine.service.models.results.AddExerciseToRoutineResult
  com.amazon.ata.gym.routine.service.models.results.AddExerciseToRoutineResult$Builder
-com/amazon/ata/gym/routine/service/dynamodb/RoutineDao.java
- com.amazon.ata.gym.routine.service.dynamodb.RoutineDao

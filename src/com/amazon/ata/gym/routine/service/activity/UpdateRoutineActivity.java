@@ -7,7 +7,7 @@ import com.amazon.ata.gym.routine.service.exceptions.InvalidAttributeValueExcept
 import com.amazon.ata.gym.routine.service.models.RoutineModel;
 import com.amazon.ata.gym.routine.service.models.requests.UpdateRoutineRequest;
 import com.amazon.ata.gym.routine.service.models.results.UpdateRoutineResult;
-import com.amazon.ata.gym.routine.service.dynamodb.RoutineDao;
+import com.amazon.ata.gym.routine.service.dao.RoutineDao;
 
 import com.amazon.ata.gym.routine.service.util.GymRoutineServiceUtils;
 import com.amazonaws.services.lambda.runtime.Context;

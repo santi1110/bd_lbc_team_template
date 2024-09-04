@@ -1,6 +1,6 @@
 package com.amazon.ata.gym.routine.service.activity;
 
-import com.amazon.ata.gym.routine.service.dynamodb.RoutineDao;
+import com.amazon.ata.gym.routine.service.dao.RoutineDao;
 import com.amazon.ata.gym.routine.service.dynamodb.models.Routine;
 import com.amazon.ata.gym.routine.service.models.requests.GetRoutineRequest;
 import com.amazon.ata.gym.routine.service.models.results.GetRoutineResult;
