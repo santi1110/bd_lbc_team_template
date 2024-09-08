@@ -1,0 +1,422 @@
+{
+  "routines": [
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {"S": "R001"},
+          "name": {"S": "Cardio Blast"},
+          "customerId": {"S": "User123"},
+          "exerciseCount": {"N": "2"},
+          "tags": {"SS": ["Cardio", "High-Intensity"]},
+          "exerciseList": {"L": [
+            {
+              "M": {
+                "exerciseId": {"S": "ex001"},
+                "exerciseNumber": {"N": "1"},
+                "exerciseName": {"S": "Running"},
+                "muscleGroupName": {"S": "Legs"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex002"},
+                "exerciseNumber": {"N": "2"},
+                "exerciseName": {"S": "Jump Rope"},
+                "muscleGroupName": {"S": "Full Body"}
+              }
+            }
+          ]}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {"S": "R002"},
+          "name": {"S": "Strength Training"},
+          "customerId": {"S": "User124"},
+          "exerciseCount": {"N": "2"},
+          "tags": {"SS": ["Strength", "Full Body"]},
+          "exerciseList": {"L": [
+            {
+              "M": {
+                "exerciseId": {"S": "ex003"},
+                "exerciseNumber": {"N": "1"},
+                "exerciseName": {"S": "Squats"},
+                "muscleGroupName": {"S": "Legs"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex004"},
+                "exerciseNumber": {"N": "2"},
+                "exerciseName": {"S": "Bench Press"},
+                "muscleGroupName": {"S": "Chest"}
+              }
+            }
+          ]}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {"S": "R003"},
+          "name": {"S": "Yoga Basics"},
+          "customerId": {"S": "User125"},
+          "exerciseCount": {"N": "3"},
+          "tags": {"SS": ["Flexibility", "Calm"]},
+          "exerciseList": {"L": [
+            {
+              "M": {
+                "exerciseId": {"S": "ex005"},
+                "exerciseNumber": {"N": "1"},
+                "exerciseName": {"S": "Downward Dog"},
+                "muscleGroupName": {"S": "Full Body"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex006"},
+                "exerciseNumber": {"N": "2"},
+                "exerciseName": {"S": "Warrior Pose"},
+                "muscleGroupName": {"S": "Legs"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex007"},
+                "exerciseNumber": {"N": "3"},
+                "exerciseName": {"S": "Child's Pose"},
+                "muscleGroupName": {"S": "Back"}
+              }
+            }
+          ]}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {"S": "R004"},
+          "name": {"S": "High-Intensity Interval Training"},
+          "customerId": {"S": "User126"},
+          "exerciseCount": {"N": "4"},
+          "tags": {"SS": ["HIIT", "Cardio"]},
+          "exerciseList": {"L": [
+            {
+              "M": {
+                "exerciseId": {"S": "ex008"},
+                "exerciseNumber": {"N": "1"},
+                "exerciseName": {"S": "Burpees"},
+                "muscleGroupName": {"S": "Full Body"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex009"},
+                "exerciseNumber": {"N": "2"},
+                "exerciseName": {"S": "Mountain Climbers"},
+                "muscleGroupName": {"S": "Core"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex010"},
+                "exerciseNumber": {"N": "3"},
+                "exerciseName": {"S": "Jumping Jacks"},
+                "muscleGroupName": {"S": "Full Body"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex011"},
+                "exerciseNumber": {"N": "4"},
+                "exerciseName": {"S": "High Knees"},
+                "muscleGroupName": {"S": "Legs"}
+              }
+            }
+          ]}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {"S": "R005"},
+          "name": {"S": "Core Strength"},
+          "customerId": {"S": "User127"},
+          "exerciseCount": {"N": "3"},
+          "tags": {"SS": ["Core", "Strength"]},
+          "exerciseList": {"L": [
+            {
+              "M": {
+                "exerciseId": {"S": "ex012"},
+                "exerciseNumber": {"N": "1"},
+                "exerciseName": {"S": "Plank"},
+                "muscleGroupName": {"S": "Core"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex013"},
+                "exerciseNumber": {"N": "2"},
+                "exerciseName": {"S": "Russian Twists"},
+                "muscleGroupName": {"S": "Core"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex014"},
+                "exerciseNumber": {"N": "3"},
+                "exerciseName": {"S": "Leg Raises"},
+                "muscleGroupName": {"S": "Core"}
+              }
+            }
+          ]}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {"S": "R006"},
+          "name": {"S": "Flexibility Training"},
+          "customerId": {"S": "User128"},
+          "exerciseCount": {"N": "2"},
+          "tags": {"SS": ["Flexibility", "Recovery"]},
+          "exerciseList": {"L": [
+            {
+              "M": {
+                "exerciseId": {"S": "ex015"},
+                "exerciseNumber": {"N": "1"},
+                "exerciseName": {"S": "Hamstring Stretch"},
+                "muscleGroupName": {"S": "Legs"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex016"},
+                "exerciseNumber": {"N": "2"},
+                "exerciseName": {"S": "Shoulder Stretch"},
+                "muscleGroupName": {"S": "Shoulders"}
+              }
+            }
+          ]}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {"S": "R007"},
+          "name": {"S": "Full Body Workout"},
+          "customerId": {"S": "User129"},
+          "exerciseCount": {"N": "5"},
+          "tags": {"SS": ["Full Body", "Strength"]},
+          "exerciseList": {"L": [
+            {
+              "M": {
+                "exerciseId": {"S": "ex017"},
+                "exerciseNumber": {"N": "1"},
+                "exerciseName": {"S": "Push-Ups"},
+                "muscleGroupName": {"S": "Chest"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex018"},
+                "exerciseNumber": {"N": "2"},
+                "exerciseName": {"S": "Lunges"},
+                "muscleGroupName": {"S": "Legs"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex019"},
+                "exerciseNumber": {"N": "3"},
+                "exerciseName": {"S": "Rows"},
+                "muscleGroupName": {"S": "Back"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex020"},
+                "exerciseNumber": {"N": "4"},
+                "exerciseName": {"S": "Dumbbell Curls"},
+                "muscleGroupName": {"S": "Arms"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex021"},
+                "exerciseNumber": {"N": "5"},
+                "exerciseName": {"S": "Tricep Dips"},
+                "muscleGroupName": {"S": "Arms"}
+              }
+            }
+          ]}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {"S": "R008"},
+          "name": {"S": "Morning Yoga"},
+          "customerId": {"S": "User130"},
+          "exerciseCount": {"N": "3"},
+          "tags": {"SS": ["Yoga", "Morning"]},
+          "exerciseList": {"L": [
+            {
+              "M": {
+                "exerciseId": {"S": "ex022"},
+                "exerciseNumber": {"N": "1"},
+                "exerciseName": {"S": "Sun Salutation"},
+                "muscleGroupName": {"S": "Full Body"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex023"},
+                "exerciseNumber": {"N": "2"},
+                "exerciseName": {"S": "Tree Pose"},
+                "muscleGroupName": {"S": "Legs"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex024"},
+                "exerciseNumber": {"N": "3"},
+                "exerciseName": {"S": "Seated Forward Bend"},
+                "muscleGroupName": {"S": "Back"}
+              }
+            }
+          ]}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {"S": "R009"},
+          "name": {"S": "Strength Endurance"},
+          "customerId": {"S": "User131"},
+          "exerciseCount": {"N": "4"},
+          "tags": {"SS": ["Strength", "Endurance"]},
+          "exerciseList": {"L": [
+            {
+              "M": {
+                "exerciseId": {"S": "ex025"},
+                "exerciseNumber": {"N": "1"},
+                "exerciseName": {"S": "Deadlifts"},
+                "muscleGroupName": {"S": "Back"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex026"},
+                "exerciseNumber": {"N": "2"},
+                "exerciseName": {"S": "Bench Press"},
+                "muscleGroupName": {"S": "Chest"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex027"},
+                "exerciseNumber": {"N": "3"},
+                "exerciseName": {"S": "Shoulder Press"},
+                "muscleGroupName": {"S": "Shoulders"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex028"},
+                "exerciseNumber": {"N": "4"},
+                "exerciseName": {"S": "Leg Press"},
+                "muscleGroupName": {"S": "Legs"}
+              }
+            }
+          ]}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {"S": "R010"},
+          "name": {"S": "Evening Stretch"},
+          "customerId": {"S": "User132"},
+          "exerciseCount": {"N": "2"},
+          "tags": {"SS": ["Stretching", "Evening"]},
+          "exerciseList": {"L": [
+            {
+              "M": {
+                "exerciseId": {"S": "ex029"},
+                "exerciseNumber": {"N": "1"},
+                "exerciseName": {"S": "Forward Bend"},
+                "muscleGroupName": {"S": "Back"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex030"},
+                "exerciseNumber": {"N": "2"},
+                "exerciseName": {"S": "Quad Stretch"},
+                "muscleGroupName": {"S": "Legs"}
+              }
+            }
+          ]}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {"S": "R011"},
+          "name": {"S": "Cardio Kickboxing"},
+          "customerId": {"S": "User133"},
+          "exerciseCount": {"N": "4"},
+          "tags": {"SS": ["Cardio", "Kickboxing"]},
+          "exerciseList": {"L": [
+            {
+              "M": {
+                "exerciseId": {"S": "ex031"},
+                "exerciseNumber": {"N": "1"},
+                "exerciseName": {"S": "Jab-Cross"},
+                "muscleGroupName": {"S": "Full Body"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex032"},
+                "exerciseNumber": {"N": "2"},
+                "exerciseName": {"S": "Roundhouse Kick"},
+                "muscleGroupName": {"S": "Legs"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex033"},
+                "exerciseNumber": {"N": "3"},
+                "exerciseName": {"S": "Uppercut"},
+                "muscleGroupName": {"S": "Arms"}
+              }
+            },
+            {
+              "M": {
+                "exerciseId": {"S": "ex034"},
+                "exerciseNumber": {"N": "4"},
+                "exerciseName": {"S": "Front Kick"},
+                "muscleGroupName": {"S": "Legs"}
+              }
+            }
+          ]}
+        }
+      }
+    }
+  ]
+}
+
+
+
