@@ -1,5 +1,5 @@
 {
-    "exercise_muclegroup": [
+    "exercises": [
         {
             "PutRequest": {
                 "Item": {
@@ -22,7 +22,7 @@
             "PutRequest": {
                 "Item": {
                     "exerciseId": {
-                        "S": "B00000000"
+                        "S": "B00040000"
                     },
                     "exerciseNumber": {
                         "N": "1"
@@ -58,7 +58,7 @@
             "PutRequest": {
                 "Item": {
                     "exerciseId": {
-                        "S": "B00000000"
+                        "S": "B00000020"
                     },
                     "exerciseNumber": {
                         "N": "3"
@@ -94,7 +94,7 @@
             "PutRequest": {
                 "Item": {
                     "exerciseId": {
-                        "S": "B00000000"
+                        "S": "B00010000"
                     },
                     "exerciseNumber": {
                         "N": "5"
@@ -130,7 +130,7 @@
             "PutRequest": {
                 "Item": {
                     "exerciseId": {
-                        "S": "B07NJ3H27X"
+                        "S": "B07NJ3H27G"
                     },
                     "exerciseNumber": {
                         "N": "1"
