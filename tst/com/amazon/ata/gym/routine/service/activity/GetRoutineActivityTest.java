@@ -47,7 +47,7 @@ public class GetRoutineActivityTest {
         when(routineDao.getRoutine(expectedId)).thenReturn(routine);
 
         GetRoutineRequest request = GetRoutineRequest.builder()
-                .withRoutineId(expectedId)
+                .withId(expectedId)
                 .build();
 
         // WHEN

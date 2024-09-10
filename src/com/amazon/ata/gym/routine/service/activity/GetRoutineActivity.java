@@ -47,7 +47,7 @@ public class GetRoutineActivity implements RequestHandler<GetRoutineRequest, Get
     @Override
     public GetRoutineResult handleRequest(final GetRoutineRequest getRoutineRequest, Context context) {
         log.info("Received GetRoutineRequest {}", getRoutineRequest);
-        String requestedId = getRoutineRequest.getRoutineId();
+        String requestedId = getRoutineRequest.getId();
         Routine routine = routineDao.getRoutine(requestedId);
 
         if (routine == null) {
