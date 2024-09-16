@@ -15,16 +15,16 @@ Resources:
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions:
-        - AttributeName: "exerciseId"
+        - AttributeName: "exercise_id"
           AttributeType: "S"
         - AttributeName: "exercise_number"
           AttributeType: "N"
       KeySchema:
-        - AttributeName: "exerciseId"
+        - AttributeName: "exercise_id"
           KeyType: "HASH"
         - AttributeName: "exercise_number"
           KeyType: "RANGE"
       BillingMode: "PAY_PER_REQUEST"
-      TableName: "exercises_groupsmuscle"
+      TableName: "exercises"
 
 

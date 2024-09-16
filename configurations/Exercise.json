@@ -1,0 +1,208 @@
+{
+    "exercises": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "exercise_id": {
+                        "S": "E019HKJTCI"
+                    },
+                    "exercise_number": {
+                        "N": "6"
+                    },
+                    "muscle_group_name": {
+                        "S": "Chest"
+                    },
+                    "exercise_name": {
+                        "S": "Bench Press"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "exercise_id": {
+                        "S": "E00000000"
+                    },
+                    "exercise_number": {
+                        "N": "1"
+                    },
+                    "muscle_group_name": {
+                        "S": "Back"
+                    },
+                    "exercise_name": {
+                        "S": "Pull-Up"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "exercise_id": {
+                        "S": "EAB0000000"
+                    },
+                    "exercise_number": {
+                        "N": "2"
+                    },
+                    "muscle_group_name": {
+                        "S": "Legs"
+                    },
+                    "exercise_name": {
+                        "S": "Squat"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "exercise_id": {
+                        "S": "E00000000"
+                    },
+                    "exercise_number": {
+                        "N": "3"
+                    },
+                    "muscle_group_name": {
+                        "S": "Shoulders"
+                    },
+                    "exercise_name": {
+                        "S": "Shoulder Press"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "exercise_id": {
+                        "S": "E00000000"
+                    },
+                    "exercise_number": {
+                        "N": "4"
+                    },
+                    "muscle_group_name": {
+                        "S": "Arms"
+                    },
+                    "exercise_name": {
+                        "S": "Bicep Curl"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "exercise_id": {
+                        "S": "E00000000"
+                    },
+                    "exercise_number": {
+                        "N": "5"
+                    },
+                    "muscle_group_name": {
+                        "S": "Abs"
+                    },
+                    "exercise_name": {
+                        "S": "Crunch"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "exercise_id": {
+                        "S": "E07VSG6V59"
+                    },
+                    "exercise_number": {
+                        "N": "2"
+                    },
+                    "muscle_group_name": {
+                        "S": "Chest"
+                    },
+                    "exercise_name": {
+                        "S": "Incline Bench Press"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "exercise_id": {
+                        "S": "E07NJ3H27X"
+                    },
+                    "exercise_number": {
+                        "N": "1"
+                    },
+                    "muscle_group_name": {
+                        "S": "Back"
+                    },
+                    "exercise_name": {
+                        "S": "Lat Pulldown"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "exercise_id": {
+                        "S": "E07NJ3H27X"
+                    },
+                    "exercise_number": {
+                        "N": "7"
+                    },
+                    "muscle_group_name": {
+                        "S": "Legs"
+                    },
+                    "exercise_name": {
+                        "S": "Leg Press"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "exercise_id": {
+                        "S": "E004CAWKXE"
+                    },
+                    "exercise_number": {
+                        "N": "2"
+                    },
+                    "muscle_group_name": {
+                        "S": "Shoulders"
+                    },
+                    "exercise_name": {
+                        "S": "Lateral Raise"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "exercise_id": {
+                        "S": "E000LP5FSG"
+                    },
+                    "exercise_number": {
+                        "N": "2"
+                    },
+                    "muscle_group_name": {
+                        "S": "Arms"
+                    },
+                    "exercise_name": {
+                        "S": "Tricep Extension"
+                    }
+                }
+            }
+        }
+    ]
+}
+
+
+
+
+
+

@@ -160,11 +160,12 @@ jar {
 }
 
 task buildZip(type: Zip) {
-    archiveFileName = 'distribution.zip'
-    destinationDirectory = file("$buildDir/distributions")
-
-    from sourceSets.main.output  // Include compiled classes and resources
+    from sourceSets.main.output // Include compiled classes
+    from processResources // Include resources
     into('lib') {
-        from configurations.runtimeClasspath  // Include runtime dependencies
+        from configurations.runtimeClasspath // Include runtime dependencies
     }
+    archiveFileName = 'my-distribution.zip' // Set the name of the ZIP file
+    destinationDirectory = file("$buildDir/distributions") // Set the destination directory for the ZIP file
 }
+

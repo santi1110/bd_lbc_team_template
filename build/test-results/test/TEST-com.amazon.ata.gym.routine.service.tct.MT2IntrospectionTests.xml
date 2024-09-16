@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.amazon.ata.gym.routine.service.tct.MT2IntrospectionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-09-16T12:41:30" hostname="SANTIMSI" time="0.092">
-  <properties/>
-  <testcase name="mt02_specificInvalidAttributeExceptions_shareParentInvalidAttributeException()" classname="com.amazon.ata.gym.routine.service.tct.MT2IntrospectionTests" time="0.092"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
