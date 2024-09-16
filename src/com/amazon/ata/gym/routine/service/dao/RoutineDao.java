@@ -1,7 +1,7 @@
 package com.amazon.ata.gym.routine.service.dao;
 
-import com.amazon.ata.gym.routine.service.dynamodb.models.Routine; // Updated model import
-import com.amazon.ata.gym.routine.service.exceptions.RoutineNotFoundException; // Updated exception import
+import com.amazon.ata.gym.routine.service.dynamodb.models.Routine;
+import com.amazon.ata.gym.routine.service.exceptions.RoutineNotFoundException;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 
 import javax.inject.Inject;
@@ -32,7 +32,7 @@ public class RoutineDao {
         Routine routine = this.dynamoDbMapper.load(Routine.class, id);
 
         if (routine == null) {
-            throw new RoutineNotFoundException("Could not find routine with id " + id); // Updated exception
+            throw new RoutineNotFoundException("Could not find routine with id " + id);
         }
 
         return routine;

@@ -61,9 +61,9 @@ public class AddExerciseToRoutineActivity implements RequestHandler<AddExerciseT
     public AddExerciseToRoutineResult handleRequest(final AddExerciseToRoutineRequest addExerciseToRoutineRequest, Context context) {
         log.info("Received AddExerciseToRoutineRequest {} ", addExerciseToRoutineRequest);
 
-        Routine routine = routineDao.getRoutine(addExerciseToRoutineRequest.getRoutineId());
+        Routine routine = routineDao.getRoutine(addExerciseToRoutineRequest.getId());
         if (routine == null) {
-            throw new RoutineNotFoundException("Could not find routine with id " + addExerciseToRoutineRequest.getRoutineId());
+            throw new RoutineNotFoundException("Could not find routine with id " + addExerciseToRoutineRequest.getId());
         }
 
         // Fetch the exercise by ID and order

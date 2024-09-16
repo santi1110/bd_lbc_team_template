@@ -9,15 +9,16 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.Type;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Converter class for converting between a List of Exercise and its JSON representation.
+ * Converter class for converting between a LinkedList of Exercise and its JSON representation.
  * Implements DynamoDBTypeConverter for DynamoDB integration.
  */
 public class ExerciseLinkedListConverter implements DynamoDBTypeConverter<String, List<Exercise>> {
     private static final Gson GSON = new Gson();
-    private static final Type EXERCISE_LIST_TYPE = new TypeToken<List<Exercise>>() {}.getType();
+    private static final Type EXERCISE_LIST_TYPE = new TypeToken<LinkedList<Exercise>>() {}.getType();
     private final Logger log = LogManager.getLogger();
 
     /**
@@ -52,5 +53,4 @@ public class ExerciseLinkedListConverter implements DynamoDBTypeConverter<String
         }
     }
 }
-
 

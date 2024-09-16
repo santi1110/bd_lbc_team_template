@@ -1,0 +1,137 @@
+{
+  "routines": [
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "ATVT0" },
+          "customerId": { "S": "12345" },
+          "name": { "S": "Full Body Routine" },
+          "exerciseCount": { "N": "0" },
+          "exerciseList": { "L": [] },
+          "tags": { "SS": ["strength", "endurance", "cardio"] }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "ATVT1" },
+          "customerId": { "S": "12346" },
+          "name": { "S": "Upper Body Routine" },
+          "exerciseCount": { "N": "0" },
+          "exerciseList": { "L": [] },
+          "tags": { "SS": ["strength", "muscle"] }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "ATVT2" },
+          "customerId": { "S": "12347" },
+          "name": { "S": "Lower Body Routine" },
+          "exerciseCount": { "N": "0" },
+          "exerciseList": { "L": [] },
+          "tags": { "SS": ["strength", "legs"] }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "ATVT3" },
+          "customerId": { "S": "12348" },
+          "name": { "S": "Cardio Routine" },
+          "exerciseCount": { "N": "0" },
+          "exerciseList": { "L": [] },
+          "tags": { "SS": ["endurance", "cardio"] }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "ATVT4" },
+          "customerId": { "S": "12349" },
+          "name": { "S": "Core Strength Routine" },
+          "exerciseCount": { "N": "0" },
+          "exerciseList": { "L": [] },
+          "tags": { "SS": ["core", "strength"] }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "ATVT5" },
+          "customerId": { "S": "12350" },
+          "name": { "S": "Leg Day Routine" },
+          "exerciseCount": { "N": "0" },
+          "exerciseList": { "L": [] },
+          "tags": { "SS": ["legs", "strength"] }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "ATVT6" },
+          "customerId": { "S": "12351" },
+          "name": { "S": "HIIT Routine" },
+          "exerciseCount": { "N": "0" },
+          "exerciseList": { "L": [] },
+          "tags": { "SS": ["cardio", "intensity"] }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "ATVT7" },
+          "customerId": { "S": "12352" },
+          "name": { "S": "Mobility Routine" },
+          "exerciseCount": { "N": "0" },
+          "exerciseList": { "L": [] },
+          "tags": { "SS": ["mobility", "flexibility"] }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "ATVT8" },
+          "customerId": { "S": "12353" },
+          "name": { "S": "Endurance Training" },
+          "exerciseCount": { "N": "0" },
+          "exerciseList": { "L": [] },
+          "tags": { "SS": ["endurance", "stamina"] }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "ATVT9" },
+          "customerId": { "S": "12354" },
+          "name": { "S": "Strength and Power" },
+          "exerciseCount": { "N": "0" },
+          "exerciseList": { "L": [] },
+          "tags": { "SS": ["strength", "power"] }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "ATVT10" },
+          "customerId": { "S": "12355" },
+          "name": { "S": "Flexibility Routine" },
+          "exerciseCount": { "N": "0" },
+          "exerciseList": { "L": [] },
+          "tags": { "SS": ["flexibility", "stretching"] }
+        }
+      }
+    }
+  ]
+}
+

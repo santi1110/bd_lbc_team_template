@@ -52,7 +52,7 @@ public class AddExerciseToRoutineActivityTest {
         when(exerciseDao.getExercise(addedExerciseId, addedExerciseNumber)).thenReturn(exerciseToAdd);
 
         AddExerciseToRoutineRequest request = new AddExerciseToRoutineRequest.Builder()
-                .withRoutineId(routineId)
+                .withId(routineId)
                 .withExerciseId(addedExerciseId)
                 .withExerciseNumber(addedExerciseNumber)
                 .withQueueNext(false) // or true, depending on your test scenario
@@ -74,7 +74,7 @@ public class AddExerciseToRoutineActivityTest {
         // GIVEN
         String routineId = "missing id";
         AddExerciseToRoutineRequest request = new AddExerciseToRoutineRequest.Builder()
-                .withRoutineId(routineId)
+                .withId(routineId)
                 .withExerciseId("exerciseId")
                 .withExerciseNumber(1)
                 .withQueueNext(false)
@@ -93,7 +93,7 @@ public class AddExerciseToRoutineActivityTest {
         String exerciseId = "nonexistent exercise";
         int exerciseNumber = -1;
         AddExerciseToRoutineRequest request = new AddExerciseToRoutineRequest.Builder()
-                .withRoutineId(routineId)
+                .withId(routineId)
                 .withExerciseId(exerciseId)
                 .withExerciseNumber(exerciseNumber)
                 .withQueueNext(false)

@@ -12,10 +12,10 @@ import java.util.Objects;
  */
 @DynamoDBTable(tableName = "exercises")
 public class Exercise {
-    private String exerciseId; // Unique identifier for the exercise
-    private Integer exerciseNumber; // Order or identifier for the exercise in a routine
-    private String muscleGroupName; // Name of the muscle group (formerly albumName)
-    private String exerciseName; // Name of the exercise (formerly songTitle)
+    private String exerciseId;
+    private Integer exerciseNumber;
+    private String muscleGroupName;
+    private String exerciseName;
 
     @Override
     public boolean equals(Object o) {

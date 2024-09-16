@@ -3,7 +3,7 @@ package com.amazon.ata.gym.routine.service.models.requests;
 import java.util.Objects;
 
 public class AddExerciseToRoutineRequest {
-    private String routineId;
+    private String id;
     private String exerciseId;
     private int exerciseNumber;
     private boolean queueNext;
@@ -11,26 +11,26 @@ public class AddExerciseToRoutineRequest {
     public AddExerciseToRoutineRequest() {
     }
 
-    public AddExerciseToRoutineRequest(String routineId, String exerciseId, int exerciseNumber, boolean queueNext) {
-        this.routineId = routineId;
+    public AddExerciseToRoutineRequest(String id, String exerciseId, int exerciseNumber, boolean queueNext) {
+        this.id = id;
         this.exerciseId = exerciseId;
         this.exerciseNumber = exerciseNumber;
         this.queueNext = queueNext;
     }
 
     public AddExerciseToRoutineRequest(Builder builder) {
-        this.routineId = builder.routineId;
+        this.id = builder.id;
         this.exerciseId = builder.exerciseId;
         this.exerciseNumber = builder.exerciseNumber;
         this.queueNext = builder.queueNext;
     }
 
-    public String getRoutineId() {
-        return routineId;
+    public String getId() {
+        return id;
     }
 
-    public void setRoutineId(String routineId) {
-        this.routineId = routineId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getExerciseId() {
@@ -64,19 +64,19 @@ public class AddExerciseToRoutineRequest {
         AddExerciseToRoutineRequest that = (AddExerciseToRoutineRequest) o;
         return exerciseNumber == that.exerciseNumber &&
                 queueNext == that.queueNext &&
-                Objects.equals(routineId, that.routineId) &&
+                Objects.equals(id, that.id) &&
                 Objects.equals(exerciseId, that.exerciseId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(routineId, exerciseId, exerciseNumber, queueNext);
+        return Objects.hash(id, exerciseId, exerciseNumber, queueNext);
     }
 
     @Override
     public String toString() {
         return "AddExerciseToRoutineRequest{" +
-                "routineId='" + routineId + '\'' +
+                "routineId='" + id + '\'' +
                 ", exerciseId='" + exerciseId + '\'' +
                 ", exerciseNumber=" + exerciseNumber +
                 ", queueNext=" + queueNext +
@@ -84,13 +84,13 @@ public class AddExerciseToRoutineRequest {
     }
 
     public static class Builder {
-        private String routineId;
+        private String id;
         private String exerciseId;
         private int exerciseNumber;
         private boolean queueNext;
 
-        public Builder withRoutineId(String routineId) {
-            this.routineId = routineId;
+        public Builder withId(String id) {
+            this.id = id;
             return this;
         }
 

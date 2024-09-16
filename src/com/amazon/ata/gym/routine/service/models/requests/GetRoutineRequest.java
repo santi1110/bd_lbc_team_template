@@ -6,7 +6,7 @@ import java.util.Objects;
  * Request class to get details of a specific gym routine by its ID.
  */
 public class GetRoutineRequest {
-    private String id; // Unique identifier for the gym routine
+    private String id;
 
     public GetRoutineRequest() {
     }

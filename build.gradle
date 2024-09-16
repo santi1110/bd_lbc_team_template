@@ -160,9 +160,11 @@ jar {
 }
 
 task buildZip(type: Zip) {
-    from compileJava
-    from processResources
-    into('./lib') {
-        from configurations.runtimeClasspath
+    archiveFileName = 'distribution.zip'
+    destinationDirectory = file("$buildDir/distributions")
+
+    from sourceSets.main.output  // Include compiled classes and resources
+    into('lib') {
+        from configurations.runtimeClasspath  // Include runtime dependencies
     }
 }

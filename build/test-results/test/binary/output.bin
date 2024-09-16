@@ -1,0 +1,344 @@
+Class Diagram Content:
+@startuml
++title Gym Routine Service - Class Diagram
+
+' Activity Classes
+&class AddExerciseToRoutineActivity {
+    - Logger log
+    - RoutineDao routineDao
+    - ExerciseDao exerciseDao
+=    + AddExerciseToRoutineActivity(RoutineDao, ExerciseDao)
+W    + handleRequest(AddExerciseToRoutineRequest, Context): AddExerciseToRoutineResult
+}
+
+class CreateRoutineActivity {
+    - Logger log
+    - RoutineDao routineDao
+)    + CreateRoutineActivity(RoutineDao)
+I    + handleRequest(CreateRoutineRequest, Context): CreateRoutineResult
+}
+
+class GetRoutineActivity {
+    - Logger log
+    - RoutineDao routineDao
+&    + GetRoutineActivity(RoutineDao)
+C    + handleRequest(GetRoutineRequest, Context): GetRoutineResult
+}
+
+%class GetRoutineExercisesActivity {
+    - Logger log
+    - RoutineDao routineDao
+/    + GetRoutineExercisesActivity(RoutineDao)
+U    + handleRequest(GetRoutineExercisesRequest, Context): GetRoutineExercisesResult
+}
+
+class UpdateRoutineActivity {
+    - Logger log
+    - RoutineDao routineDao
+)    + UpdateRoutineActivity(RoutineDao)
+I    + handleRequest(UpdateRoutineRequest, Context): UpdateRoutineResult
+}
+
+' DAO Classes
+class ExerciseDao {
+&    - dynamoDbMapper: DynamoDBMapper
+#    + ExerciseDao(DynamoDBMapper)
+%    + getExercise(String): Exercise
+$    + saveExercise(Exercise): void
+}
+
+class RoutineDao {
+&    - dynamoDbMapper: DynamoDBMapper
+"    + RoutineDao(DynamoDBMapper)
+#    + getRoutine(String): Routine
+"    + saveRoutine(Routine): void
+}
+
+' Exception Classes
+5class AttributeException extends RuntimeException {
+    + AttributeException()
+"    + AttributeException(String)
+%    + AttributeException(Throwable)
+-    + AttributeException(String, Throwable)
+}
+
+Cclass InvalidAttributeValueException extends AttributeException {
+(    + InvalidAttributeValueException()
+.    + InvalidAttributeValueException(String)
+1    + InvalidAttributeValueException(Throwable)
+9    + InvalidAttributeValueException(String, Throwable)
+}
+
+Dclass InvalidAttributeChangeException extends AttributeException {
+)    + InvalidAttributeChangeException()
+/    + InvalidAttributeChangeException(String)
+2    + InvalidAttributeChangeException(Throwable)
+:    + InvalidAttributeChangeException(String, Throwable)
+}
+
+<class ExerciseNotFoundException extends RuntimeException {
+#    + ExerciseNotFoundException()
+)    + ExerciseNotFoundException(String)
+,    + ExerciseNotFoundException(Throwable)
+4    + ExerciseNotFoundException(String, Throwable)
+}
+
+;class RoutineNotFoundException extends RuntimeException {
+"    + RoutineNotFoundException()
+(    + RoutineNotFoundException(String)
++    + RoutineNotFoundException(Throwable)
+3    + RoutineNotFoundException(String, Throwable)
+}
+
+' DynamoDB Model Classes
+class Exercise {
+,    + @DynamoDBHashKey exerciseId : String
+    + exerciseName : String
+2    + @DynamoDBRangeKey exerciseNumber : Integer
+     + muscleGroupName : String
+}
+
+class Routine {
+$    + @DynamoDBHashKey id : String
+    + name : String
+    + customerId : String
+    + exerciseCount : Integer
+    + tags : Set<String>
+%    + exerciseList : List<Exercise>
+}
+
+' Utility Classes
+ class GymRoutineServiceUtils {
+0    + static validateRoutineName(String): void
+9    + static validateExerciseList(List<Exercise>): void
+}
+
+class ModelConverter {
+4    + static toRoutineModel(Routine): RoutineModel
+7    + static toExerciseModel(Exercise): ExerciseModel
+}
+
+class RoutineModel {
+    + id : String
+    + name : String
+    + customerId : String
+    + exerciseCount : Integer
+    + tags : Set<String>
+*    + exerciseList : List<ExerciseModel>
+}
+
+class ExerciseModel {
+    + exerciseId : String
+    + exerciseName : String
+    + exerciseType : String
+     + exerciseNumber : Integer
+}
+
+' Relationships
+-AddExerciseToRoutineActivity --> RoutineDao
+.AddExerciseToRoutineActivity --> ExerciseDao
+
+&CreateRoutineActivity --> RoutineDao
+
+#GetRoutineActivity --> RoutineDao
+
+,GetRoutineExercisesActivity --> RoutineDao
+
+&UpdateRoutineActivity --> RoutineDao
+
+!Routine --> Exercise : contains
+
+ModelConverter --> Routine
+!ModelConverter --> RoutineModel
+
+2CreateRoutineActivity --> GymRoutineServiceUtils
+
+JAddExerciseToRoutineActivity --> InvalidAttributeValueException : throws
+DUpdateRoutineActivity --> InvalidAttributeChangeException : throws
+
+8AttributeException <|-- InvalidAttributeValueException
+9AttributeException <|-- InvalidAttributeChangeException
+
+EInvalidAttributeValueException <|-- InvalidAttributeChangeException
+
+9ExerciseNotFoundException <|-- RoutineNotFoundException
+"Routine --> ExerciseModel : uses
+
+	@enduml
+
+
+
+
+
+ Class Diagram Content:
+ @startuml
+ +title Gym Routine Service - Class Diagram
+ 
+ ' Activity Classes
+ &class AddExerciseToRoutineActivity {
+     - Logger log
+     - RoutineDao routineDao
+     - ExerciseDao exerciseDao
+ =    + AddExerciseToRoutineActivity(RoutineDao, ExerciseDao)
+ W    + handleRequest(AddExerciseToRoutineRequest, Context): AddExerciseToRoutineResult
+ }
+ 
+ class CreateRoutineActivity {
+     - Logger log
+     - RoutineDao routineDao
+ )    + CreateRoutineActivity(RoutineDao)
+ I    + handleRequest(CreateRoutineRequest, Context): CreateRoutineResult
+ }
+ 
+ class GetRoutineActivity {
+     - Logger log
+     - RoutineDao routineDao
+ &    + GetRoutineActivity(RoutineDao)
+ C    + handleRequest(GetRoutineRequest, Context): GetRoutineResult
+ }
+ 
+ %class GetRoutineExercisesActivity {
+     - Logger log
+     - RoutineDao routineDao
+ /    + GetRoutineExercisesActivity(RoutineDao)
+ U    + handleRequest(GetRoutineExercisesRequest, Context): GetRoutineExercisesResult
+ }
+ 
+ class UpdateRoutineActivity {
+     - Logger log
+     - RoutineDao routineDao
+ )    + UpdateRoutineActivity(RoutineDao)
+ I    + handleRequest(UpdateRoutineRequest, Context): UpdateRoutineResult
+ }
+ 
+ ' DAO Classes
+ class ExerciseDao {
+ &    - dynamoDbMapper: DynamoDBMapper
+ #    + ExerciseDao(DynamoDBMapper)
+ %    + getExercise(String): Exercise
+ $    + saveExercise(Exercise): void
+ }
+ 
+ class RoutineDao {
+ &    - dynamoDbMapper: DynamoDBMapper
+ "    + RoutineDao(DynamoDBMapper)
+ #    + getRoutine(String): Routine
+ "    + saveRoutine(Routine): void
+ }
+ 
+ ' Exception Classes
+ 5class AttributeException extends RuntimeException {
+     + AttributeException()
+ "    + AttributeException(String)
+ %    + AttributeException(Throwable)
+ -    + AttributeException(String, Throwable)
+ }
+ 
+ Cclass InvalidAttributeValueException extends AttributeException {
+ (    + InvalidAttributeValueException()
+ .    + InvalidAttributeValueException(String)
+ 1    + InvalidAttributeValueException(Throwable)
+ 9    + InvalidAttributeValueException(String, Throwable)
+ }
+ 
+ Dclass InvalidAttributeChangeException extends AttributeException {
+ )    + InvalidAttributeChangeException()
+ /    + InvalidAttributeChangeException(String)
+ 2    + InvalidAttributeChangeException(Throwable)
+ :    + InvalidAttributeChangeException(String, Throwable)
+ }
+ 
+ <class ExerciseNotFoundException extends RuntimeException {
+ #    + ExerciseNotFoundException()
+ )    + ExerciseNotFoundException(String)
+ ,    + ExerciseNotFoundException(Throwable)
+ 4    + ExerciseNotFoundException(String, Throwable)
+ }
+ 
+ ;class RoutineNotFoundException extends RuntimeException {
+ "    + RoutineNotFoundException()
+ (    + RoutineNotFoundException(String)
+ +    + RoutineNotFoundException(Throwable)
+ 3    + RoutineNotFoundException(String, Throwable)
+ }
+ 
+ ' DynamoDB Model Classes
+ class Exercise {
+ ,    + @DynamoDBHashKey exerciseId : String
+     + exerciseName : String
+ 2    + @DynamoDBRangeKey exerciseNumber : Integer
+      + muscleGroupName : String
+ }
+ 
+ class Routine {
+ $    + @DynamoDBHashKey id : String
+     + name : String
+     + customerId : String
+     + exerciseCount : Integer
+     + tags : Set<String>
+ %    + exerciseList : List<Exercise>
+ }
+ 
+ ' Utility Classes
+  class GymRoutineServiceUtils {
+ 0    + static validateRoutineName(String): void
+ 9    + static validateExerciseList(List<Exercise>): void
+ }
+ 
+ class ModelConverter {
+ 4    + static toRoutineModel(Routine): RoutineModel
+ 7    + static toExerciseModel(Exercise): ExerciseModel
+ }
+ 
+ class RoutineModel {
+     + id : String
+     + name : String
+     + customerId : String
+     + exerciseCount : Integer
+     + tags : Set<String>
+ *    + exerciseList : List<ExerciseModel>
+ }
+ 
+ class ExerciseModel {
+     + exerciseId : String
+     + exerciseName : String
+     + exerciseType : String
+      + exerciseNumber : Integer
+ }
+ 
+ ' Relationships
+ -AddExerciseToRoutineActivity --> RoutineDao
+ .AddExerciseToRoutineActivity --> ExerciseDao
+ 
+ &CreateRoutineActivity --> RoutineDao
+ 
+ #GetRoutineActivity --> RoutineDao
+ 
+ ,GetRoutineExercisesActivity --> RoutineDao
+ 
+ &UpdateRoutineActivity --> RoutineDao
+ 
+ !Routine --> Exercise : contains
+ 
+ ModelConverter --> Routine
+ !ModelConverter --> RoutineModel
+ 
+ 2CreateRoutineActivity --> GymRoutineServiceUtils
+ 
+ JAddExerciseToRoutineActivity --> InvalidAttributeValueException : throws
+ DUpdateRoutineActivity --> InvalidAttributeChangeException : throws
+ 
+ 8AttributeException <|-- InvalidAttributeValueException
+ 9AttributeException <|-- InvalidAttributeChangeException
+ 
+ EInvalidAttributeValueException <|-- InvalidAttributeChangeException
+ 
+ 9ExerciseNotFoundException <|-- RoutineNotFoundException
+ "Routine --> ExerciseModel : uses
+ 
+ 	@enduml
+ 
+ 
+ 
+ 
+ 

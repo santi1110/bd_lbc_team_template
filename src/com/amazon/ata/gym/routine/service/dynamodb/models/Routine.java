@@ -19,7 +19,7 @@ public class Routine {
     private String customerId;
     private Integer exerciseCount;
     private Set<String> tags;
-    private List<Exercise> exerciseList; // Changed type to Exercise
+    private List<Exercise> exerciseList;
 
     @DynamoDBHashKey(attributeName = "id")
     public String getId() {

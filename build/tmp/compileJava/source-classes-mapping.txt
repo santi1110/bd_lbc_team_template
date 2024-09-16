@@ -82,6 +82,8 @@ com/amazon/ata/gym/routine/service/dynamodb/models/Routine.java
  com.amazon.ata.gym.routine.service.dynamodb.models.Routine
 com/amazon/ata/gym/routine/service/lambda/CreateRoutineActivityProvider.java
  com.amazon.ata.gym.routine.service.lambda.CreateRoutineActivityProvider
+com/amazon/ata/gym/routine/service/dynamodb/models/DynamoDBTest.java
+ com.amazon.ata.gym.routine.service.dynamodb.models.DynamoDBTest
 com/amazon/ata/gym/routine/service/models/results/AddExerciseToRoutineResult.java
  com.amazon.ata.gym.routine.service.models.results.AddExerciseToRoutineResult
  com.amazon.ata.gym.routine.service.models.results.AddExerciseToRoutineResult$Builder
