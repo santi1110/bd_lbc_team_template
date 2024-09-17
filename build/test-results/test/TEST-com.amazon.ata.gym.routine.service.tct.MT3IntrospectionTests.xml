@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.amazon.ata.gym.routine.service.tct.MT3IntrospectionTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-09-17T12:57:30" hostname="SANTIMSI" time="0.445">
+<testsuite name="com.amazon.ata.gym.routine.service.tct.MT3IntrospectionTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-09-17T12:58:36" hostname="SANTIMSI" time="0.326">
   <properties/>
-  <testcase name="mt03_module_providesSingletonDynamoDbMapper()" classname="com.amazon.ata.gym.routine.service.tct.MT3IntrospectionTests" time="0.32"/>
-  <testcase name="mt03_appClass_deleted()" classname="com.amazon.ata.gym.routine.service.tct.MT3IntrospectionTests" time="0.025"/>
-  <testcase name="mt03_daggerClasses_correctlyAnnotated()" classname="com.amazon.ata.gym.routine.service.tct.MT3IntrospectionTests" time="0.071"/>
+  <testcase name="mt03_module_providesSingletonDynamoDbMapper()" classname="com.amazon.ata.gym.routine.service.tct.MT3IntrospectionTests" time="0.206"/>
+  <testcase name="mt03_appClass_deleted()" classname="com.amazon.ata.gym.routine.service.tct.MT3IntrospectionTests" time="0.028"/>
+  <testcase name="mt03_daggerClasses_correctlyAnnotated()" classname="com.amazon.ata.gym.routine.service.tct.MT3IntrospectionTests" time="0.065"/>
   <testcase name="mt03_componentClass_providesActivityClasses()" classname="com.amazon.ata.gym.routine.service.tct.MT3IntrospectionTests" time="0.026"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

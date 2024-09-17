@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.amazon.ata.gym.routine.service.activity.AddExerciseToRoutineActivityTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-09-17T12:58:34" hostname="SANTIMSI" time="1.069">
+  <properties/>
+  <testcase name="handleRequest_validRequest_addsExerciseToRoutine()" classname="com.amazon.ata.gym.routine.service.activity.AddExerciseToRoutineActivityTest" time="1.061"/>
+  <testcase name="handleRequest_noMatchingExercise_throwsExerciseNotFoundException()" classname="com.amazon.ata.gym.routine.service.activity.AddExerciseToRoutineActivityTest" time="0.004"/>
+  <testcase name="handleRequest_noMatchingRoutineId_throwsRoutineNotFoundException()" classname="com.amazon.ata.gym.routine.service.activity.AddExerciseToRoutineActivityTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

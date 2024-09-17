@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.amazon.ata.gym.routine.service.activity.UpdateRoutineActivityTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-09-17T12:58:36" hostname="SANTIMSI" time="0.026">
+  <properties/>
+  <testcase name="handleRequest_goodRequest_updatesRoutineName()" classname="com.amazon.ata.gym.routine.service.activity.UpdateRoutineActivityTest" time="0.018"/>
+  <testcase name="handleRequest_customerIdNotMatch_throwsInvalidAttributeChangeException()" classname="com.amazon.ata.gym.routine.service.activity.UpdateRoutineActivityTest" time="0.002"/>
+  <testcase name="handleRequest_routineDoesNotExist_throwsRoutineNotFoundException()" classname="com.amazon.ata.gym.routine.service.activity.UpdateRoutineActivityTest" time="0.002"/>
+  <testcase name="handleRequest_invalidName_throwsInvalidAttributeValueException()" classname="com.amazon.ata.gym.routine.service.activity.UpdateRoutineActivityTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
