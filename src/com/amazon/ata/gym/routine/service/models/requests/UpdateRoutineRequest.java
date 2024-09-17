@@ -7,7 +7,7 @@ import java.util.Set;
  * Request class to update a gym routine.
  */
 public class UpdateRoutineRequest {
-    private String routineId; // Unique identifier for the gym routine
+    private String id; // Unique identifier for the gym routine
     private String name; // Name of the routine
     private String customerId; // Customer ID associated with the routine
     private Set<String> tags; // Tags associated with the routine
@@ -15,26 +15,26 @@ public class UpdateRoutineRequest {
     public UpdateRoutineRequest() {
     }
 
-    public UpdateRoutineRequest(String routineId, String name, String customerId, Set<String> tags) {
-        this.routineId = routineId;
+    public UpdateRoutineRequest(String id, String name, String customerId, Set<String> tags) {
+        this.id = id;
         this.name = name;
         this.customerId = customerId;
         this.tags = tags;
     }
 
     public UpdateRoutineRequest(Builder builder) {
-        this.routineId = builder.routineId;
+        this.id = builder.id;
         this.name = builder.name;
         this.customerId = builder.customerId;
         this.tags = builder.tags;
     }
 
-    public String getRoutineId() {
-        return routineId;
+    public String getId() {
+        return id;
     }
 
-    public void setRoutineId(String routineId) {
-        this.routineId = routineId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -66,7 +66,7 @@ public class UpdateRoutineRequest {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UpdateRoutineRequest that = (UpdateRoutineRequest) o;
-        return Objects.equals(routineId, that.routineId) &&
+        return Objects.equals(id, that.id) &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(customerId, that.customerId) &&
                 Objects.equals(tags, that.tags);
@@ -74,13 +74,13 @@ public class UpdateRoutineRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(routineId, name, customerId, tags);
+        return Objects.hash(id, name, customerId, tags);
     }
 
     @Override
     public String toString() {
         return "UpdateRoutineRequest{" +
-                "routineId='" + routineId + '\'' +
+                "routineId='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", customerId='" + customerId + '\'' +
                 ", tags=" + tags +
@@ -92,7 +92,7 @@ public class UpdateRoutineRequest {
     }
 
     public static final class Builder {
-        private String routineId;
+        private String id;
         private String name;
         private String customerId;
         private Set<String> tags;
@@ -100,8 +100,8 @@ public class UpdateRoutineRequest {
         private Builder() {
         }
 
-        public Builder withRoutineId(String routineIdToUse) {
-            this.routineId = routineIdToUse;
+        public Builder withRoutineId(String idToUse){
+            this.id = idToUse;
             return this;
         }
 

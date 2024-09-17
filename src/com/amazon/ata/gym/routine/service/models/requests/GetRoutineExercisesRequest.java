@@ -8,28 +8,28 @@ import java.util.Objects;
  * Request class to get exercises from a specific routine.
  */
 public class GetRoutineExercisesRequest {
-    private String routineId; // Unique identifier for the gym routine
+    private String id; // Unique identifier for the gym routine
     private ExerciseOrder order; // Order in which to return the exercises
 
     public GetRoutineExercisesRequest() {
     }
 
-    public GetRoutineExercisesRequest(String routineId, ExerciseOrder order) {
-        this.routineId = routineId;
+    public GetRoutineExercisesRequest(String id, ExerciseOrder order) {
+        this.id = id;
         this.order = order;
     }
 
     public GetRoutineExercisesRequest(Builder builder) {
-        this.routineId = builder.routineId;
+        this.id = builder.id;
         this.order = builder.order;
     }
 
-    public String getRoutineId() {
-        return routineId;
+    public String getId() {
+        return id;
     }
 
-    public void setRoutineId(String routineId) {
-        this.routineId = routineId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public ExerciseOrder getOrder() {
@@ -45,19 +45,19 @@ public class GetRoutineExercisesRequest {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GetRoutineExercisesRequest that = (GetRoutineExercisesRequest) o;
-        return Objects.equals(routineId, that.routineId) &&
+        return Objects.equals(id, that.id) &&
                 order == that.order;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(routineId, order);
+        return Objects.hash(id, order);
     }
 
     @Override
     public String toString() {
         return "GetRoutineExercisesRequest{" +
-                "routineId='" + routineId + '\'' +
+                "routineId='" + id + '\'' +
                 ", order=" + order +
                 '}';
     }
@@ -67,14 +67,14 @@ public class GetRoutineExercisesRequest {
     }
 
     public static final class Builder {
-        private String routineId;
+        private String id;
         private ExerciseOrder order;
 
         private Builder() {
         }
 
-        public Builder withRoutineId(String routineIdToUse) {
-            this.routineId = routineIdToUse;
+        public Builder withId(String idToUse) {
+            this.id = idToUse;
             return this;
         }
 
