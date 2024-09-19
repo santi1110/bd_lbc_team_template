@@ -1,65 +1,69 @@
 const addExerciseForm = document.querySelector("#add-exercise-form");
 const exerciseTable = document.querySelector("#exercises-table");
 const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id');
+const routineId = urlParams.get('id');
 
-addExerciseForm.onsubmit = function(evt) {
+addExerciseForm.onsubmit = async function(evt) {
   evt.preventDefault();
+
   const exerciseId = document.querySelector("#exercise-id").value;
   const exerciseNumber = document.querySelector("#exercise-number").value;
+
   const newExercise = {
-    "exerciseId": exerciseId,
-    "exerciseNumber": exerciseNumber,
-    "queueNext": false
-  }
-  axios.post(`https://xcw9g5k9xa.execute-api.us-west-2.amazonaws.com/prod/routines/${id}/trainings`, newExercise, {
-    authorization: {
-      'x-api-key': 'kAaNLacHgC1KmpJR5P5yE6cXN6AC1YjB7Yf5PPpC'
-    }
-  })
-  .then(res => {
+    exerciseId,
+    exerciseNumber,
+    queueNext: false
+  };
+
+  try {
+    const res = await axios.post(`https://xcw9g5k9xa.execute-api.us-west-2.amazonaws.com/prod/routines/${routineId}/trainings`, newExercise, {
+      headers: {
+        'x-api-key': 'kAaNLacHgC1KmpJR5P5yE6cXN6AC1YjB7Yf5PPpC'
+      }
+    });
     console.log(res);
     window.location.reload();
-  });
-}
+  } catch (error) {
+    console.error("Error adding exercise:", error);
+  }
+};
 
-window.onload = async function(evt) {
-  evt.preventDefault();
+window.onload = async function() {
   console.log("Getting Exercises Data...");
-  axios.get("https://xcw9g5k9xa.execute-api.us-west-2.amazonaws.com/prod/routines/"+id+"/trainings", {
-    authorization: {
-      'x-api-key': 'kAaNLacHgC1KmpJR5P5yE6cXN6AC1YjB7Yf5PPpC'
-    }
-  }).then(res => {
-    console.log(res);
-    if (!res.data) {
-      throw "No data for routine with id:" + id;
-    }
+
+  try {
+    const res = await axios.get(`https://xcw9g5k9xa.execute-api.us-west-2.amazonaws.com/prod/routines/${routineId}/trainings`, {
+      headers: {
+        'x-api-key': 'kAaNLacHgC1KmpJR5P5yE6cXN6AC1YjB7Yf5PPpC'
+      }
+    });
+    if (!res.data) throw new Error(`No data for routine with id: ${routineId}`);
 
     if (res.data.exerciseList.length > 0) {
       populateExercises(res.data.exerciseList);
     }
-  })
-}
+  } catch (error) {
+    console.error("Error fetching exercises:", error);
+  }
+};
 
 function populateExercises(exercisesData) {
-  let thead = exerciseTable.createTHead();
-  let tbody = exerciseTable.createTBody();
-  let row = thead.insertRow();
+  const thead = exerciseTable.createTHead();
+  const tbody = exerciseTable.createTBody();
+  const row = thead.insertRow();
 
-  for (let key in exercisesData[0]) {
-    let th = document.createElement("th");
-    let text = document.createTextNode(key);
-    th.appendChild(text);
+  Object.keys(exercisesData[0]).forEach(key => {
+    const th = document.createElement("th");
+    th.textContent = key;
     row.appendChild(th);
-  }
+  });
 
-  for (let exercise of exercisesData) {
-    let row = tbody.insertRow();
-    for (key in exercise) {
-      let cell = row.insertCell();
-      let text = document.createTextNode(exercise[key]);
-      cell.appendChild(text);
-    }
-  }
+  exercisesData.forEach(exercise => {
+    const row = tbody.insertRow();
+    Object.values(exercise).forEach(value => {
+      const cell = row.insertCell();
+      cell.textContent = value;
+    });
+  });
 }
+

@@ -1,31 +1,33 @@
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="routine.js" defer></script>
-    <title>Add MuscleGroup</title>
-  </head>
-  <body>
-    <h2>Muscle Groups For Routine</h2>
-    <table id="exercises-table">
-    </table>
-    <div class="card">
-      <h2>Add Exercise to Routine</h2>
-      <form class="card-content" id="add-muscle-group-form">
-          <p class="form-field">
-            <label>Exercise Id
-              <input type="text" required class="validated-field" id="exercise-id" autofocus>
-            </label>
-          </p>
-          <p class="form-field">
-            <label>Exercise Number
-              <input type="number" id="exercise-number">
-            </label>
-          </p>
-          <input type="submit" id="add-muscle-group">
-      </form>
-    </div>
-    <div>
-      <a href="index.html">Back To Routines</a>
-    </div>
-  </body>
+    <title>Add Muscle Group</title>
+</head>
+<body>
+<h2>Muscle Groups For Routine</h2>
+<table id="exercises-table"></table>
+
+<div class="card">
+    <h2>Add Exercise to Routine</h2>
+    <form class="card-content" id="add-exercise-form">
+        <label for="exercise-id">Exercise Id</label>
+        <input type="text" required class="validated-field" id="exercise-id" autofocus>
+
+        <label for="exercise-number">Exercise Number</label>
+        <input type="number" id="exercise-number">
+
+        <input type="submit" id="add-exercise" value="Add Exercise">
+    </form>
+</div>
+
+<div>
+    <a href="index.html">Back To Routines</a>
+</div>
+</body>
 </html>
+
