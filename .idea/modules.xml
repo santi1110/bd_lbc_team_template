@@ -2,6 +2,18 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/UnitProject.iml" filepath="$PROJECT_DIR$/.idea/modules/UnitProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/UnitProject.LibrariesAndUtilities.iml" filepath="$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/UnitProject.LibrariesAndUtilities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/ATACurriculumTctIntrospection/UnitProject.LibrariesAndUtilities.ATACurriculumTctIntrospection.iml" filepath="$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/ATACurriculumTctIntrospection/UnitProject.LibrariesAndUtilities.ATACurriculumTctIntrospection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/ATACurriculumTestInfrastructure/UnitProject.LibrariesAndUtilities.ATACurriculumTestInfrastructure.iml" filepath="$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/ATACurriculumTestInfrastructure/UnitProject.LibrariesAndUtilities.ATACurriculumTestInfrastructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/ATACurriculumTestInfrastructure/UnitProject.LibrariesAndUtilities.ATACurriculumTestInfrastructure.main.iml" filepath="$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/ATACurriculumTestInfrastructure/UnitProject.LibrariesAndUtilities.ATACurriculumTestInfrastructure.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/ATACurriculumTestInfrastructure/UnitProject.LibrariesAndUtilities.ATACurriculumTestInfrastructure.test.iml" filepath="$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/ATACurriculumTestInfrastructure/UnitProject.LibrariesAndUtilities.ATACurriculumTestInfrastructure.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/ATAIntegrationTestInfrastructure/UnitProject.LibrariesAndUtilities.ATAIntegrationTestInfrastructure.iml" filepath="$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/ATAIntegrationTestInfrastructure/UnitProject.LibrariesAndUtilities.ATAIntegrationTestInfrastructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/LessonPlanResources/UnitProject.LibrariesAndUtilities.LessonPlanResources.iml" filepath="$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/LessonPlanResources/UnitProject.LibrariesAndUtilities.LessonPlanResources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/LessonPlanResources/UnitProject.LibrariesAndUtilities.LessonPlanResources.main.iml" filepath="$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/LessonPlanResources/UnitProject.LibrariesAndUtilities.LessonPlanResources.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/LessonPlanResources/UnitProject.LibrariesAndUtilities.LessonPlanResources.test.iml" filepath="$PROJECT_DIR$/.idea/modules/LibrariesAndUtilities/LessonPlanResources/UnitProject.LibrariesAndUtilities.LessonPlanResources.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/UnitProject.main.iml" filepath="$PROJECT_DIR$/.idea/modules/UnitProject.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/UnitProject.test.iml" filepath="$PROJECT_DIR$/.idea/modules/UnitProject.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/bd_lbc_team_template.iml" filepath="$PROJECT_DIR$/.idea/bd_lbc_team_template.iml" />
     </modules>
   </component>
